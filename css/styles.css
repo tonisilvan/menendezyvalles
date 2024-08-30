@@ -83,7 +83,7 @@ header nav {
 
 /* Section styles */
 .section {
-    padding: 140px 20px 50px; /* Aumentado para evitar que el menú tape el contenido */
+    padding: 140px 20px 50px;
 }
 
 .section h2 {
@@ -117,8 +117,8 @@ header nav {
 /* Carousel */
 .carousel {
     position: relative;
-    max-width: 100%; /* Hacer el carrusel más pequeño en desktop */
-    margin: 20px auto; /* Centrar el carrusel */
+    max-width: 100%;
+    margin: 20px auto;
 }
 
 .carousel-container {
@@ -133,7 +133,7 @@ header nav {
 }
 
 .carousel-slide img {
-    width: 80%; /* Imagen más pequeña en desktop */
+    width: 80%;
     border-radius: 10px;
     margin: 0 auto;
     display: block;
@@ -160,9 +160,9 @@ header nav {
     width: 40px;
     height: 40px;
     margin-top: -22px;
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro para contraste */
+    background-color: rgba(0, 0, 0, 0.6);
     border: none;
-    border-radius: 50%; /* Hacerlos redondos */
+    border-radius: 50%;
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -182,17 +182,17 @@ header nav {
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo más oscuro al pasar el mouse */
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .prev:before {
-    content: '\f104'; /* FontAwesome flecha izquierda */
+    content: '\f104';
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
 }
 
 .next:before {
-    content: '\f105'; /* FontAwesome flecha derecha */
+    content: '\f105';
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
 }
@@ -243,7 +243,7 @@ header nav {
 
     header .container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: flex-start; /* Alinear a la izquierda */
     }
 
     header nav {
@@ -261,18 +261,21 @@ header nav {
         flex-direction: column;
         width: 100%;
         background-color: #00695c;
+        align-items: flex-start; /* Alinear el menú a la izquierda */
+        padding-left: 20px; /* Añadir un poco de padding a la izquierda */
     }
 
     header.nav-active nav ul li {
         margin-left: 0;
         width: 100%;
-        text-align: center;
+        text-align: left; /* Alinear el texto a la izquierda */
         padding: 10px 0;
         border-bottom: 1px solid #004d40;
     }
 
     .mobile-menu.open div:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
+        position: absolute;
     }
 
     .mobile-menu.open div:nth-child(2) {
@@ -281,14 +284,20 @@ header nav {
 
     .mobile-menu.open div:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
+        position: absolute;
+    }
+
+    /* Evitar que el menú se solape con la X */
+    .mobile-menu {
+        z-index: 1100; /* Mayor que el z-index del menú para que esté por encima */
     }
 
     /* Ajustes para el carrusel en versión móvil */
     .carousel-slide img {
-        width: 100%; /* Hacer las imágenes aún más grandes en móvil */
+        width: 100%;
     }
 
     .section {
-        padding: 140px 20px 50px; /* Más espacio para evitar que el contenido quede oculto */
+        padding: 140px 20px 50px;
     }
 }
