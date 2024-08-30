@@ -1,0 +1,306 @@
+/* Define la fuente Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: #00695c;
+    color: white;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile menu */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+header nav {
+    transition: transform 0.3s ease;
+}
+
+/* Section styles */
+.section {
+    padding: 100px 20px 50px;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: #00695c;
+}
+
+.features, .activities, .location, .tarifas {
+    margin-bottom: 20px;
+}
+
+.features ul, .activities ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features ul li, .activities ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.features ul li i, .activities ul li i {
+    margin-right: 10px;
+    color: #00695c;
+}
+
+/* Tabs */
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tab-label {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 5px;
+    background-color: #00695c;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.tab-label:hover {
+    background-color: #004d40;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.tab-content .content {
+    display: none;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+#tab1:checked ~ .tab-content #content1,
+#tab2:checked ~ .tab-content #content2 {
+    display: block;
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: 20px 0;
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 80%; /* Imagen más pequeña */
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+}
+
+.carousel-slide img.fullscreen {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 0;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Contact section */
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contacto form input, #contacto form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#contacto form button {
+    background-color: #26a69a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s;
+}
+
+#contacto form button i {
+    margin-right: 10px;
+}
+
+#contacto form button:hover {
+    background-color: #80cbc4;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive menu */
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: flex;
+    }
+
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header.nav-active nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header.nav-active nav ul {
+        flex-direction: column;
+        width: 100%;
+        background-color: #00695c;
+    }
+
+    header.nav-active nav ul li {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #004d40;
+    }
+
+    .mobile-menu.open div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-menu.open div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu.open div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
