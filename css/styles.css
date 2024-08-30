@@ -4,7 +4,7 @@
 /* General styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f0f5f5;
+    background-color: #f0f2f5;
     color: #333;
     margin: 0;
     padding: 0;
@@ -65,9 +65,11 @@ header nav ul li a:hover {
 
 /* Mobile menu */
 .mobile-menu {
-    display: none;
+    display: flex;
     flex-direction: column;
     cursor: pointer;
+    position: relative;
+    z-index: 1100;
 }
 
 .mobile-menu div {
@@ -75,7 +77,7 @@ header nav ul li a:hover {
     height: 3px;
     background-color: white;
     margin: 4px 0;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 header nav {
@@ -239,13 +241,12 @@ header nav {
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
     .mobile-menu {
-        display: flex;
-        z-index: 1100; /* Mantener la X encima del menú */
+        z-index: 1100;
     }
 
     .mobile-menu div {
-        width: 20px; /* Reducir un poco el tamaño de la X */
-        height: 2.5px; /* Ajustar el grosor de las líneas */
+        width: 22px; /* Reducir un poco más el tamaño de la X */
+        height: 2px; /* Ajustar el grosor de las líneas */
     }
 
     header .container {
@@ -281,7 +282,7 @@ header nav {
     }
 
     .mobile-menu.open div:nth-child(1) {
-        transform: rotate(45deg) translate(4px, 4px);
+        transform: rotate(45deg) translate(3px, 3px);
         position: absolute;
     }
 
@@ -290,7 +291,7 @@ header nav {
     }
 
     .mobile-menu.open div:nth-child(3) {
-        transform: rotate(-45deg) translate(4px, -4px);
+        transform: rotate(-45deg) translate(3px, -3px);
         position: absolute;
     }
 
