@@ -245,8 +245,8 @@ header nav {
     }
 
     .mobile-menu div {
-        width: 22px; /* Reducir un poco más el tamaño de la X */
-        height: 2px; /* Ajustar el grosor de las líneas */
+        width: 22px;
+        height: 2px;
     }
 
     header .container {
@@ -282,7 +282,7 @@ header nav {
     }
 
     .mobile-menu.open div:nth-child(1) {
-        transform: rotate(45deg) translate(3px, 3px);
+        transform: rotate(45deg) translate(10px, 5px); /* Mover la "X" más a la derecha */
         position: absolute;
     }
 
@@ -291,7 +291,7 @@ header nav {
     }
 
     .mobile-menu.open div:nth-child(3) {
-        transform: rotate(-45deg) translate(3px, -3px);
+        transform: rotate(-45deg) translate(10px, -5px); /* Mover la "X" más a la derecha */
         position: absolute;
     }
 
