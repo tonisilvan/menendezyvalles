@@ -16,6 +16,12 @@ body {
     padding: 0 20px;
 }
 
+.logo {
+    display: block;
+    max-width: 200px;
+    margin: 20px auto;
+}
+
 /* Header */
 header {
     background-color: #00695c;
@@ -108,47 +114,11 @@ header nav {
     color: #00695c;
 }
 
-/* Tabs */
-.tabs {
-    margin-bottom: 20px;
-}
-
-.tab-label {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-right: 5px;
-    background-color: #00695c;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px 5px 0 0;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-}
-
-.tab-label:hover {
-    background-color: #004d40;
-}
-
-input[type="radio"] {
-    display: none;
-}
-
-.tab-content .content {
-    display: none;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-}
-
-#tab1:checked ~ .tab-content #content1,
-#tab2:checked ~ .tab-content #content2 {
-    display: block;
-}
-
 /* Carousel */
 .carousel {
     position: relative;
-    max-width: 100%;
-    margin: 20px 0;
+    max-width: 80%; /* Hacer el carrusel más pequeño */
+    margin: 20px auto; /* Centrar el carrusel */
 }
 
 .carousel-container {
@@ -163,7 +133,7 @@ input[type="radio"] {
 }
 
 .carousel-slide img {
-    width: 80%; /* Imagen más pequeña */
+    width: 70%; /* Imagen más pequeña */
     border-radius: 10px;
     margin: 0 auto;
     display: block;
@@ -191,29 +161,33 @@ input[type="radio"] {
     padding: 16px;
     color: white;
     font-weight: bold;
-    font-size: 18px;
-    transition: 0.3s ease;
-    border-radius: 0 3px 3px 0;
+    font-size: 24px; /* Tamaño más grande para visibilidad */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro para contraste */
+    border-radius: 50%; /* Hacerlos redondos */
     user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.prev {
+    left: 10px; /* Mover un poco hacia la izquierda */
 }
 
 .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    right: 10px; /* Mover un poco hacia la derecha */
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro al pasar el mouse */
 }
 
-/* Contact section */
-#contacto form {
+/* Contact form */
+.contact-form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#contacto form input, #contacto form textarea {
+.contact-form input, .contact-form textarea {
     width: 100%;
     max-width: 500px;
     padding: 10px;
@@ -223,7 +197,7 @@ input[type="radio"] {
     font-family: 'Poppins', sans-serif;
 }
 
-#contacto form button {
+.contact-form button {
     background-color: #26a69a;
     color: white;
     padding: 10px 20px;
@@ -236,24 +210,12 @@ input[type="radio"] {
     transition: background-color 0.3s;
 }
 
-#contacto form button i {
+.contact-form button i {
     margin-right: 10px;
 }
 
-#contacto form button:hover {
+.contact-form button:hover {
     background-color: #80cbc4;
-}
-
-/* Footer styles */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    margin: 0;
 }
 
 /* Responsive menu */
