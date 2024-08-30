@@ -73,8 +73,8 @@ header nav ul li a:hover {
 }
 
 .mobile-menu div {
-    width: 25px;
-    height: 3px;
+    width: 20px; /* Reducido el tamaño de la "X" */
+    height: 2px; /* Reducido el grosor de las líneas */
     background-color: white;
     margin: 4px 0;
     transition: all 0.3s ease;
@@ -245,7 +245,7 @@ header nav {
     }
 
     .mobile-menu div {
-        width: 22px;
+        width: 20px; /* Tamaño reducido de la "X" */
         height: 2px;
     }
 
@@ -282,7 +282,7 @@ header nav {
     }
 
     .mobile-menu.open div:nth-child(1) {
-        transform: rotate(45deg) translate(10px, 5px); /* Mover la "X" más a la derecha */
+        transform: rotate(45deg) translate(15px, 5px); /* Mover la "X" más a la derecha */
         position: absolute;
     }
 
@@ -291,7 +291,7 @@ header nav {
     }
 
     .mobile-menu.open div:nth-child(3) {
-        transform: rotate(-45deg) translate(10px, -5px); /* Mover la "X" más a la derecha */
+        transform: rotate(-45deg) translate(15px, -5px); /* Mover la "X" más a la derecha */
         position: absolute;
     }
 
