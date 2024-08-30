@@ -83,7 +83,7 @@ header nav {
 
 /* Section styles */
 .section {
-    padding: 120px 20px 50px; /* Ajustado para evitar que el menú tape el contenido */
+    padding: 140px 20px 50px; /* Aumentado para evitar que el menú tape el contenido */
 }
 
 .section h2 {
@@ -117,7 +117,7 @@ header nav {
 /* Carousel */
 .carousel {
     position: relative;
-    max-width: 80%; /* Hacer el carrusel más pequeño en desktop */
+    max-width: 100%; /* Hacer el carrusel más pequeño en desktop */
     margin: 20px auto; /* Centrar el carrusel */
 }
 
@@ -133,7 +133,7 @@ header nav {
 }
 
 .carousel-slide img {
-    width: 90%; /* Imagen más grande para móvil */
+    width: 80%; /* Imagen más pequeña en desktop */
     border-radius: 10px;
     margin: 0 auto;
     display: block;
@@ -289,6 +289,6 @@ header nav {
     }
 
     .section {
-        padding: 100px 20px 50px; /* Ajustado para que el contenido no esté tapado */
+        padding: 140px 20px 50px; /* Más espacio para evitar que el contenido quede oculto */
     }
 }
