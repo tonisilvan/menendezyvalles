@@ -4,7 +4,7 @@
 /* General styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f0f2f5;
+    background-color: #f0f5f5;
     color: #333;
     margin: 0;
     padding: 0;
@@ -75,6 +75,7 @@ header nav ul li a:hover {
     height: 3px;
     background-color: white;
     margin: 4px 0;
+    transition: transform 0.3s ease;
 }
 
 header nav {
@@ -239,11 +240,17 @@ header nav {
 @media (max-width: 768px) {
     .mobile-menu {
         display: flex;
+        z-index: 1100; /* Mantener la X encima del menú */
+    }
+
+    .mobile-menu div {
+        width: 20px; /* Reducir un poco el tamaño de la X */
+        height: 2.5px; /* Ajustar el grosor de las líneas */
     }
 
     header .container {
         flex-direction: column;
-        align-items: flex-start; /* Alinear a la izquierda */
+        align-items: flex-start;
     }
 
     header nav {
@@ -261,20 +268,20 @@ header nav {
         flex-direction: column;
         width: 100%;
         background-color: #00695c;
-        align-items: flex-start; /* Alinear el menú a la izquierda */
-        padding-left: 20px; /* Añadir un poco de padding a la izquierda */
+        align-items: flex-start;
+        padding-left: 20px;
     }
 
     header.nav-active nav ul li {
         margin-left: 0;
         width: 100%;
-        text-align: left; /* Alinear el texto a la izquierda */
+        text-align: left;
         padding: 10px 0;
         border-bottom: 1px solid #004d40;
     }
 
     .mobile-menu.open div:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg) translate(4px, 4px);
         position: absolute;
     }
 
@@ -283,13 +290,8 @@ header nav {
     }
 
     .mobile-menu.open div:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
+        transform: rotate(-45deg) translate(4px, -4px);
         position: absolute;
-    }
-
-    /* Evitar que el menú se solape con la X */
-    .mobile-menu {
-        z-index: 1100; /* Mayor que el z-index del menú para que esté por encima */
     }
 
     /* Ajustes para el carrusel en versión móvil */
