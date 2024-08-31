@@ -706,7 +706,8 @@ footer p {
     border: none;
     padding: 10px;
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 5px;
+    font-size: 18px;
 }
 
 .prev:hover, .next:hover {
