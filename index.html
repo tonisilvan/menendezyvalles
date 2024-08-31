@@ -4,26 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casas Rurales Menéndez y Valles</title>
+    <title>Casas de aldea Menéndez y Valles - Turismo rural</title>
     <meta name="description" content="Casas rurales para alquilar en Oballo y Villacibrán, en Cangas del Narcea. Disfruta de un ambiente rural con todas las comodidades.">
     <meta name="keywords" content="casa rural, Oballo, Villacibrán, Cangas del Narcea, alquiler rural, naturaleza, Asturias">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <header>
         <div class="container">
             <div class="logo-container">
-                <h1>Casas Rurales Menéndez y Valles</h1>
+                <h1>Casas de aldea Menéndez y Valles</h1>
+                <h2>Turismo rural</h2>
             </div>
             <div class="mobile-menu" id="mobile-menu">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
-            <nav class="desktop-menu">
+            <nav>
                 <ul>
                     <li><a href="#menendez" onclick="showCasa('menendez')"><i class="fas fa-home"></i> Casa Menéndez</a></li>
                     <li><a href="#valles" onclick="showCasa('valles')"><i class="fas fa-home"></i> Casa Valles</a></li>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="tarifas">
                     <h3>Tarifas</h3>
-                    <p>Casa completa día (10 plazas) - <i class="fas fa-euro-sign"></i> 250,00 EUR IVA INCLUIDO</p>
+                    <p>Casa completa día (8 plazas) - <i class="fas fa-euro-sign"></i> 250,00 EUR IVA INCLUIDO</p>
                 </div>
             </div>
         </div>
@@ -140,11 +140,11 @@
                 <div class="location">
                     <h3>Localización</h3>
                     <p>Villacibrán, Cangas del Narcea - Principado de Asturias - España</p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2928.1229129235964!2d-6.751527024368169!3d43.05784231620326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd303b3f39dcd737%3A0x3e4cf4392b2697a1!2sOballo%2C%2033800%20Cangas%20del%20Narcea%2C%20Asturias!5e0!3m2!1ses!2ses!4v1693117171398!5m2!1ses!2ses" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2928.086640396992!2d-6.650525724368219!3d43.06185461619382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd30395ec9f173d9%3A0x8bb4b17183cb2cc8!2sVillacibr%C3%A1n%2C%2033800%20Cangas%20del%20Narcea%2C%20Asturias!5e0!3m2!1ses!2ses!4v1693117171398!5m2!1ses!2ses" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="tarifas">
                     <h3>Tarifas</h3>
-                    <p>Casa completa día (10 plazas) - <i class="fas fa-euro-sign"></i> 250,00 EUR IVA INCLUIDO</p>
+                    <p>Casa completa día (8 plazas) - <i class="fas fa-euro-sign"></i> 250,00 EUR IVA INCLUIDO</p>
                 </div>
             </div>
         </div>
@@ -155,6 +155,9 @@
                 <h2>Contacto</h2>
                 <p><strong><i class="fas fa-phone"></i> Teléfono de contacto (Marcos):</strong> 
                     <a href="tel:+34629219007">629219007</a>
+                </p>
+                <p><strong><i class="fas fa-envelope"></i> Correo electrónico:</strong> 
+                    <a href="mailto:marcosgomeznarcea@gmail.com">marcosgomeznarcea@gmail.com</a>
                 </p>
                 <h3>Formulario de Contacto</h3>
                 <form action="https://formspree.io/f/marcosgomeznarcea@gmail.com" method="POST" class="contact-form">
@@ -169,7 +172,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Casas Rurales Menéndez y Valles. Todos los derechos reservados.</p>
+            <p>&copy; 2024 Casas de aldea Menéndez y Valles. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -185,12 +188,12 @@
                 behavior: 'smooth'
             });
         }
-    
+
         // Mostrar por defecto Casa Menéndez
         showCasa('menendez');
-    
+
         var slideIndex = 0;
-    
+
         function showSlides(n, containerId) {
             var i;
             var container = document.getElementById(containerId);
@@ -202,14 +205,14 @@
             }
             slides[slideIndex].style.display = "block";
         }
-    
+
         function plusSlides(n, containerId) {
             showSlides(slideIndex += n, containerId);
         }
-    
+
         function loadImages(containerId, folderName, totalImages) {
             var container = document.getElementById(containerId);
-            for (var i = 0; i <= totalImages; i++) {
+            for (var i = 1; i <= totalImages; i++) {
                 var slideDiv = document.createElement('div');
                 slideDiv.className = 'carousel-slide';
                 var img = document.createElement('img');
@@ -224,17 +227,17 @@
             }
             showSlides(slideIndex, containerId); // Mostrar la primera imagen
         }
-    
+
         document.addEventListener('DOMContentLoaded', function() {
-            loadImages('carousel-container-menedez', 'menedez', 42); // Carga 42 imágenes para Casa Menéndez
-            loadImages('carousel-container-valles', 'valles', 69); // Carga 69 imágenes para Casa Valles
+            loadImages('carousel-container-menedez', 'menedez', 29); // Carga 29 imágenes para Casa Menéndez
+            loadImages('carousel-container-valles', 'valles', 57); // Carga 57 imágenes para Casa Valles
         });
-    
+
         document.getElementById('mobile-menu').addEventListener('click', function () {
             this.classList.toggle('open');
             document.querySelector('header').classList.toggle('nav-active');
         });
-    
+
         document.querySelectorAll('header nav ul li a').forEach(function (link) {
             link.addEventListener('click', function () {
                 document.getElementById('mobile-menu').classList.remove('open');
@@ -242,7 +245,6 @@
             });
         });
     </script>
-    
 </body>
 
 </html>
