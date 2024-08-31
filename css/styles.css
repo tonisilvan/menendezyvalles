@@ -11,6 +11,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    position: relative; /* Permite el posicionamiento absoluto del menú */
 }
 
 /* Header */
@@ -28,6 +29,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Necesario para el posicionamiento del menú */
 }
 
 .logo-container {
@@ -51,20 +53,21 @@ h2 {
 }
 
 header nav {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
+    position: absolute;
+    top: 10px;
+    right: 20px;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
+    gap: 20px;
     margin: 0;
     padding: 0;
 }
 
 header nav ul li {
-    margin-left: 20px;
+    margin: 0;
 }
 
 header nav ul li a {
@@ -312,9 +315,6 @@ header nav ul li a {
         margin-top: 0px; /* Reducir margen superior */
         margin-bottom: 5px; /* Reducir margen inferior */
     }
-    .casa-section h2 {
-        font-size: 25px;
-    }
 
     .container {
         padding-top: 20px; /* Ajusta el padding-top si es necesario */
@@ -331,6 +331,11 @@ header nav ul li a {
     header .container {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    header nav {
+        position: static;
+        width: 100%;
     }
 
     header nav ul {
