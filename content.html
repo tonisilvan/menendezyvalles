@@ -199,14 +199,16 @@
 
     <script>
         function showCasa(casa) {
+            // Asegurarse de que la página se desplaza al principio
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
             document.querySelectorAll('.casa-section').forEach(section => {
                 section.style.display = 'none';
             });
             document.getElementById(casa).style.display = 'block';
-            window.scrollTo({
-                top: 0, // Desplaza al principio de la página
-                behavior: 'smooth'
-            });
         }
 
         // Mostrar por defecto Casa Menéndez
