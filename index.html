@@ -87,6 +87,20 @@
             filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.9));
         }
 
+        /* Animación latente */
+        .logo-links a img {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
         /* Animaciones */
         @keyframes fadeIn {
             from {
@@ -114,16 +128,18 @@
             }
 
             .logo-links {
-                flex-direction: column;
-                gap: 10px;
+                flex-direction: row; /* Cambia a alineación horizontal en móviles */
+                gap: 20px; /* Aumenta el espacio entre los logos */
+                margin-top: 20px; /* Reduce el margen superior para dar más espacio */
             }
 
             .logo-links a img {
-                max-width: 100px;
+                max-width: 120px; /* Aumenta el tamaño de los logos en móviles */
             }
 
             .content {
                 padding: 10px;
+                padding-top: 40px; /* Desplaza el texto hacia arriba */
             }
         }
     </style>
