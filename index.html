@@ -36,11 +36,30 @@
             color: white;
             z-index: 1;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.5); /* Filtro oscuro para mejorar la legibilidad */
+            background: rgba(0, 0, 0, 0.5);
         }
 
         h1, h2, h3 {
             margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 300;
         }
 
         /* Estilos para los enlaces con los logos */
@@ -48,16 +67,30 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .logo-links a img {
             max-width: 150px;
-            transition: transform 0.3s;
+            transition: transform 0.3s, filter 0.3s;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
         }
 
         .logo-links a img:hover {
             transform: scale(1.1);
+            filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.9));
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -76,10 +109,10 @@
 
         <div class="logo-links">
             <a href="content.html#menendez">
-                <img src="/images/logomenendez.png" alt="Casa Menéndez">
+                <img src="logomenendez.png" alt="Casa Menéndez">
             </a>
             <a href="content.html#valles">
-                <img src="/images/logovalles.png" alt="Casa Valles">
+                <img src="logovalles.png" alt="Casa Valles">
             </a>
         </div>
     </div>
