@@ -157,7 +157,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const targetElement = document.getElementById(targetId);
 
         if (targetElement) {
-            const offset = 80; // Ajusta este valor para cambiar el desplazamiento vertical
+            const offset = 180; // Ajusta este valor para cambiar el desplazamiento vertical
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - offset;
 
