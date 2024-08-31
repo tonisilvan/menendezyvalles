@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('hashchange', handleHashChange);
 
 function showCasa(casa) {
-    // Asegurarse de que la página se desplaza al principio
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -21,9 +20,12 @@ function showCasa(casa) {
     document.querySelectorAll('.casa-section').forEach(section => {
         section.style.display = 'none';
     });
-    document.getElementById(casa).style.display = 'block';
 
-    updateMenuIcons(casa);
+    const casaElement = document.getElementById(casa);
+    if (casaElement) {
+        casaElement.style.display = 'block';
+        updateMenuIcons(casa);
+    }
 }
 
 function handleHashChange() {
@@ -35,7 +37,11 @@ function handleHashChange() {
 
 function updateMenuIcons(casa) {
     const menuList = document.getElementById('menu-items');
-    menuList.innerHTML = ''; // Limpiar el menú
+    if (!menuList) {
+        console.error('Menu items container not found');
+        return;
+    }
+    menuList.innerHTML = ''; 
 
     if (casa === 'menendez') {
         menuList.innerHTML = `
@@ -89,18 +95,21 @@ function loadImages(containerId, folderName, totalImages) {
         img.src = `images/${folderName}/${i}.jpeg`;
         img.alt = 'Imagen ' + i;
         img.className = 'carousel-image';
+        img.onerror = function() {
+            console.error(`Image ${img.src} not found.`);
+        };
         img.onclick = function () {
             this.classList.toggle('fullscreen');
         };
         slideDiv.appendChild(img);
         container.appendChild(slideDiv);
     }
-    showSlides(slideIndex, containerId); // Mostrar la primera imagen
+    showSlides(slideIndex, containerId); 
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadImages('carousel-container-menedez', 'menedez', 29); // Carga 29 imágenes para Casa Menéndez
-    loadImages('carousel-container-valles', 'valles', 57); // Carga 57 imágenes para Casa Valles
+    loadImages('carousel-container-menedez', 'menedez', 29);
+    loadImages('carousel-container-valles', 'valles', 57);
 });
 
 document.getElementById('mobile-menu').addEventListener('click', function () {
