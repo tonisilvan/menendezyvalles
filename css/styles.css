@@ -259,19 +259,24 @@ header nav ul li a {
 /* Responsive Design */
 @media (max-width: 768px) {
 
-    h1, h2 {
-        font-size: 18px; /* Ajusta el tamaño de la fuente */
-        margin-top: 10px; /* Reduce el margen superior */
-        margin-bottom: 5px; /* Reduce el margen inferior */
+    h1 {
+        font-size: 22px; /* Tamaño de fuente para h1 */
+        margin-top: 10px; /* Reducir margen superior */
+        margin-bottom: 5px; /* Reducir margen inferior */
     }
-    
-    /* Ajustes adicionales para que el contenido debajo del header no se superponga */
+
+    h2 {
+        font-size: 18px; /* Tamaño de fuente para h2 */
+        margin-top: 10px; /* Reducir margen superior */
+        margin-bottom: 5px; /* Reducir margen inferior */
+    }
+
     .container {
-        padding-top: 20px; /* Ajusta el padding-top si es necesario */
+        padding-top: 20px; /* Ajustar el padding-top si es necesario */
     }
-    
+
     .casa-section {
-        margin-top: 100px; /* Ajusta el margen superior de las secciones para evitar superposición */
+        margin-top: 100px; /* Ajustar el margen superior de las secciones para evitar superposición */
     }
 
     .mobile-menu {
