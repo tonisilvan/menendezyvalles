@@ -73,34 +73,16 @@ header nav ul li a {
     font-weight: bold;
 }
 
-/* Mobile menu */
-.mobile-menu {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.mobile-menu div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
-}
-
-/* Main styles */
-main {
-    padding-top: 20px; /* Ajuste para dejar espacio entre el header y el contenido */
+/* Casa Section */
+.casa-section {
+    margin-top: 160px;
+    scroll-margin-top: 80px;
 }
 
 .casa-section h2 {
     text-align: center;
     font-size: 28px;
     color: #00695c;
-}
-
-.casa-section .logo {
-    display: block;
-    margin: 0 auto;
 }
 
 .features,
@@ -256,50 +238,8 @@ main {
     margin-top: 20px;
 }
 
-.footer p {
-    margin: 0;
-}
-
-/* Redes Sociales */
-.social-section {
-    margin-top: 40px;
-}
-
-.social-section h3 {
-    color: #00695c;
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.social-icons {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.social-icons a {
-    display: inline-flex;
-    align-items: center;
-    color: #333;
-    text-decoration: none;
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.social-icons a i {
-    font-size: 20px;
-    margin-right: 10px;
-    color: #00695c;
-}
-
-.social-icons a:hover i {
-    color: #004d40;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-
     h1 {
         font-size: 20px;
         margin-top: 0;
@@ -311,13 +251,8 @@ main {
         margin-top: 0px;
         margin-bottom: 5px;
     }
-
     .casa-section h2 {
         font-size: 25px;
-    }
-
-    .container {
-        padding-top: 20px;
     }
 
     .casa-section {
@@ -359,8 +294,17 @@ main {
         color: white;
     }
 
-    .social-icons {
-        flex-direction: column;
-        align-items: flex-start;
+    .casa-section {
+        margin-top: 180px;
+    }
+
+    .section h3 {
+        color: #00695c;
+        text-align: left;
+        margin-top: 40px;
+    }
+
+    #contacto {
+        padding-bottom: 40px;
     }
 }

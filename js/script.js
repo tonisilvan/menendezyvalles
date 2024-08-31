@@ -6,12 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
         showCasa('menendez'); // Mostrar por defecto Casa Menéndez
     }
 
-    updateMenuIcons(hash);
+    updateMenuIcons(hash); // Actualizar iconos del menú según la sección
 });
 
 window.addEventListener('hashchange', handleHashChange);
 
 function showCasa(casa) {
+    // Asegurarse de que la página se desplaza al principio
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -27,18 +28,16 @@ function showCasa(casa) {
 
 function handleHashChange() {
     const hash = window.location.hash.substring(1);
-    if (hash.includes('menendez')) {
-        showCasa('menendez');
-    } else if (hash.includes('valles')) {
-        showCasa('valles');
+    if (hash === 'menendez' || hash === 'valles') {
+        showCasa(hash);
     }
 }
 
 function updateMenuIcons(casa) {
-    const menuList = document.getElementById('menu-list');
+    const menuList = document.getElementById('menu-items');
     menuList.innerHTML = ''; // Limpiar el menú
 
-    if (casa.includes('menendez')) {
+    if (casa === 'menendez') {
         menuList.innerHTML = `
             <li><a href="index.html"><i class="fas fa-arrow-left"></i> Inicio</a></li>
             <li><a href="content.html#valles"><i class="fas fa-home"></i> Casa Valles</a></li>
@@ -49,7 +48,7 @@ function updateMenuIcons(casa) {
             <li><a href="#menendez-social"><i class="fas fa-share-alt"></i> Redes Sociales</a></li>
             <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
         `;
-    } else if (casa.includes('valles')) {
+    } else if (casa === 'valles') {
         menuList.innerHTML = `
             <li><a href="index.html"><i class="fas fa-arrow-left"></i> Inicio</a></li>
             <li><a href="content.html#menendez"><i class="fas fa-home"></i> Casa Menéndez</a></li>
@@ -62,6 +61,8 @@ function updateMenuIcons(casa) {
         `;
     }
 }
+
+let slideIndex = 0;
 
 function showSlides(n, containerId) {
     var i;
