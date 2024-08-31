@@ -157,7 +157,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const targetElement = document.getElementById(targetId);
 
         if (targetElement) {
-            const headerOffset = 100; // Ajusta este valor para cambiar el desplazamiento vertical
+            const headerOffset = 200; // Ajusta este valor para cambiar el desplazamiento vertical
             const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
             const offsetPosition = elementPosition - headerOffset;
 
@@ -174,7 +174,7 @@ window.addEventListener('hashchange', function() {
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
-        const headerOffset = 100; // Ajusta este valor para cambiar el desplazamiento vertical
+        const headerOffset = 200; // Ajusta este valor para cambiar el desplazamiento vertical
         const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
         const offsetPosition = elementPosition - headerOffset;
 
