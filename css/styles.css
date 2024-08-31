@@ -302,4 +302,15 @@ header nav ul li a {
     .casa-section {
         margin-top: 180px;
     }
+    /* Ajuste para el h3 de la sección de contacto */
+    .section h3 {
+        color: #00695c;
+        text-align: left;
+        margin-top: 40px;
+    }
+
+    /* Padding bottom para la sección de contacto */
+    #contacto {
+        padding-bottom: 40px; /* Añade espacio en la parte inferior de la sección */
+    }
 }
