@@ -185,12 +185,12 @@
                 behavior: 'smooth'
             });
         }
-
+    
         // Mostrar por defecto Casa Menéndez
         showCasa('menendez');
-
+    
         var slideIndex = 0;
-
+    
         function showSlides(n, containerId) {
             var i;
             var container = document.getElementById(containerId);
@@ -202,19 +202,19 @@
             }
             slides[slideIndex].style.display = "block";
         }
-
+    
         function plusSlides(n, containerId) {
             showSlides(slideIndex += n, containerId);
         }
-
-        function loadImages(containerId, images) {
+    
+        function loadImages(containerId, folderName, totalImages) {
             var container = document.getElementById(containerId);
-            for (var i = 0; i < images.length; i++) {
+            for (var i = 1; i <= totalImages; i++) {
                 var slideDiv = document.createElement('div');
                 slideDiv.className = 'carousel-slide';
                 var img = document.createElement('img');
-                img.src = images[i];
-                img.alt = 'Imagen ' + (i + 1);
+                img.src = `images/${folderName}/${i}.jpeg`;
+                img.alt = 'Imagen ' + i;
                 img.className = 'carousel-image';
                 img.onclick = function() {
                     this.classList.toggle('fullscreen');
@@ -224,31 +224,17 @@
             }
             showSlides(slideIndex, containerId); // Mostrar la primera imagen
         }
-
+    
         document.addEventListener('DOMContentLoaded', function() {
-            loadImages('carousel-container-menedez', [
-                'images/menedez/entrada.jpg',
-                'images/menedez/tarifas.jpg',
-                'images/menedez/localizacion.jpg',
-                'images/menedez/imagenes.jpg',
-                'images/menedez/equipamiento.jpg',
-                'images/menedez/actividades.jpg'
-            ]);
-            loadImages('carousel-container-valles', [
-                'images/valles/entrada.jpg',
-                'images/valles/tarifas.jpg',
-                'images/valles/localizacion.jpg',
-                'images/valles/imagenes.jpg',
-                'images/valles/equipamiento.jpg',
-                'images/valles/actividades.jpg'
-            ]);
+            loadImages('carousel-container-menedez', 'menedez', 29); // Carga 29 imágenes para Casa Menéndez
+            loadImages('carousel-container-valles', 'valles', 57); // Carga 57 imágenes para Casa Valles
         });
-
+    
         document.getElementById('mobile-menu').addEventListener('click', function () {
             this.classList.toggle('open');
             document.querySelector('header').classList.toggle('nav-active');
         });
-
+    
         document.querySelectorAll('header nav ul li a').forEach(function (link) {
             link.addEventListener('click', function () {
                 document.getElementById('mobile-menu').classList.remove('open');
@@ -256,6 +242,7 @@
             });
         });
     </script>
+    
 </body>
 
 </html>
