@@ -285,17 +285,20 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Siempre desplázate al principio de la página al cargarla
+            // Desplázate siempre al principio de la página al cargarla
             window.scrollTo(0, 0);
 
             const hash = window.location.hash.substring(1);
             if (hash) {
-                handleHashChange();
+                // Asegúrate de que la función de hash se ejecuta después de una pequeña demora
+                setTimeout(() => {
+                    handleHashChange();
+                }, 100);
             } else {
                 showCasa('menendez'); // Mostrar por defecto Casa Menéndez
             }
         });
-        
+
     </script>
     
 </body>
