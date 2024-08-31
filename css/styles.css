@@ -36,7 +36,12 @@ header .container {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 36px; /* Tamaño más grande para h1 en versión desktop */
+    margin: 0;
+}
+
+h2 {
+    font-size: 28px; /* Tamaño más pequeño para h2 en versión desktop */
     margin: 0;
 }
 
@@ -84,7 +89,7 @@ header nav ul li a {
 
 /* Casa Section */
 .casa-section {
-    margin-top: 160px; /* Aumentado para dejar espacio en la versión móvil */
+    margin-top: 160px;
     scroll-margin-top: 80px;
 }
 
@@ -260,13 +265,13 @@ header nav ul li a {
 @media (max-width: 768px) {
 
     h1 {
-        font-size: 22px; /* Tamaño de fuente para h1 */
+        font-size: 28px; /* Tamaño de fuente para h1 */
         margin-top: 0; /* Elimina el margen superior */
         padding-top: 10px; /* Reduce el padding superior */
     }
 
     h2 {
-        font-size: 18px; /* Tamaño de fuente para h2 */
+        font-size: 22px; /* Tamaño de fuente para h2 */
         margin-top: 10px; /* Reducir margen superior */
         margin-bottom: 5px; /* Reducir margen inferior */
     }
@@ -314,15 +319,11 @@ header nav ul li a {
         color: white;
     }
 
-    /* Ajuste para eliminar el margen superior en móvil */
-    h1 {
-        padding-top: 10px;
-    }
-
     /* Aumenta el espacio superior en la versión móvil para evitar que los títulos se solapen con el menú */
     .casa-section {
         margin-top: 180px;
     }
+
     /* Ajuste para el h3 de la sección de contacto */
     .section h3 {
         color: #00695c;
