@@ -262,11 +262,11 @@ header nav ul li a {
 }
 
 /* Redes Sociales */
-#social {
+.social-section {
     margin-top: 40px;
 }
 
-#social h3 {
+.social-section h3 {
     color: #00695c;
     text-align: left;
     margin-bottom: 20px;
