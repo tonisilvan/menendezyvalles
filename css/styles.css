@@ -312,6 +312,9 @@ header nav ul li a {
         margin-top: 0px; /* Reducir margen superior */
         margin-bottom: 5px; /* Reducir margen inferior */
     }
+    .casa-section h2 {
+        font-size: 25px;
+    }
 
     .container {
         padding-top: 20px; /* Ajusta el padding-top si es necesario */
