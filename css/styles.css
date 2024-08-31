@@ -54,6 +54,7 @@ header nav {
     flex: 1;
     display: flex;
     justify-content: flex-end;
+    padding-top: 20px;
 }
 
 header nav ul {
@@ -71,6 +72,10 @@ header nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+}
+
+header nav ul li a i {
+    margin-right: 8px;
 }
 
 /* Mobile menu */
@@ -257,7 +262,7 @@ header nav ul li a {
     margin-top: 20px;
 }
 
-.footer p {
+/.footer p {
     margin: 0;
 }
 
