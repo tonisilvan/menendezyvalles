@@ -17,7 +17,7 @@ body {
 header {
     background-color: #00695c;
     color: white;
-    padding: 10px 0;
+    padding: 20px 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -31,20 +31,25 @@ header .container {
 }
 
 .logo-container {
-    text-align: left;
-    flex: 1;
+    text-align: left; /* Alinea el título a la izquierda */
+    flex: 1; /* Permite que el logo ocupe el espacio disponible a la izquierda */
 }
 
 h1, h2 {
     font-size: 24px;
-    margin-top: 0;
-    padding-top: 0;
+    margin-top: 0; /* Asegura que no haya margen superior */
+    padding-top: 80px; /* Añade un relleno superior para evitar que el header oculte los títulos */
+}
+
+.logo {
+    max-height: 80px;
+    margin-bottom: 20px;
 }
 
 header nav {
-    flex: 1;
+    flex: 1; /* Permite que el menú ocupe el espacio disponible a la derecha */
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end; /* Alinea el menú a la derecha */
 }
 
 header nav ul {
@@ -62,7 +67,6 @@ header nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 16px; /* Unifica el tamaño de las letras del menú */
 }
 
 /* Mobile menu */
@@ -79,27 +83,10 @@ header nav ul li a {
     margin: 4px 0;
 }
 
-header.nav-active {
-    background-color: #004d40; /* Cambia el color de fondo cuando el menú está activo */
-}
-
-header.nav-active nav ul {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: #004d40; /* Cambia el fondo del menú desplegado */
-    padding: 20px;
-}
-
-header.nav-active nav ul li {
-    margin: 10px 0;
-    text-align: left;
-}
-
 /* Casa Section */
 .casa-section {
-    margin-top: 100px; /* Ajusta el margen superior para que el título no quede tapado */
-    scroll-margin-top: 100px;
+    margin-top: 160px;
+    scroll-margin-top: 80px; /* Desplaza la sección para que el header no la tape */
 }
 
 .casa-section h2 {
@@ -236,10 +223,6 @@ header.nav-active nav ul li {
     font-family: 'Poppins', sans-serif;
 }
 
-.contact-form textarea {
-    height: 150px; /* Aumenta la altura del textarea */
-}
-
 .contact-form button {
     background-color: #26a69a;
     color: white;
@@ -285,28 +268,29 @@ header.nav-active nav ul li {
         align-items: flex-start;
     }
 
-    header.nav-active nav ul {
-        display: flex;
+    header nav ul {
+        display: none;
         flex-direction: column;
         width: 100%;
-    }
-
-    header.nav-active nav ul li {
-        margin-left: 0;
-        text-align: left;
+        background-color: #004d40; /* Cambia el fondo cuando se despliega el menú en móvil */
         padding: 10px 0;
     }
 
-    header.nav-active {
-        background-color: #004d40; /* Cambia el color de fondo cuando el menú está activo */
+    header.nav-active nav ul {
+        display: flex;
     }
 
-    header.nav-active nav ul li {
-        margin: 10px 0;
+    header nav ul li {
+        margin-left: 0;
         text-align: left;
+        padding: 10px 20px;
     }
 
-    header nav.desktop-menu {
-        display: none; /* Oculta el menú de escritorio en la versión móvil */
+    header.nav-active {
+        background-color: rgba(0, 0, 0, 0.8); /* Añade un fondo semitransparente cuando el menú está activo */
+    }
+
+    header.nav-active nav ul li a {
+        color: white; /* Asegura que el texto del menú siga siendo blanco */
     }
 }
