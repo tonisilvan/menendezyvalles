@@ -149,15 +149,37 @@ document.querySelectorAll('header nav ul li a').forEach(function (link) {
     });
 });
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+    // Para los clics en enlaces de navegación
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
 
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
 
+            if (targetElement) {
+                const headerOffset = 100; // Ajusta este valor según tu encabezado
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Actualiza la URL sin recargar la página
+                history.pushState(null, null, `#${targetId}`);
+            }
+        });
+    });
+
+    // Para desplazarse correctamente al cargar la página con un hash
+    const initialHash = window.location.hash.substring(1);
+    if (initialHash) {
+        const targetElement = document.getElementById(initialHash);
         if (targetElement) {
-            const headerOffset = 400; // Ajusta este valor para cambiar el desplazamiento vertical
+            const headerOffset = 100; // Ajusta este valor según tu encabezado
             const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
             const offsetPosition = elementPosition - headerOffset;
 
@@ -166,23 +188,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth'
             });
         }
-    });
-});
-
-window.addEventListener('hashchange', function() {
-    const targetId = window.location.hash.substring(1);
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-        const headerOffset = 400; // Ajusta este valor para cambiar el desplazamiento vertical
-        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - headerOffset;
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
     }
 });
+
 
 
