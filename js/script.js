@@ -74,11 +74,14 @@ function updateMenuIcons(casa) {
     }
 }
 
+// Declarar slideIndex fuera de las funciones para hacerlo accesible globalmente
+let slideIndex = 0;
+
 function showSlides(n, containerId) {
     var i;
     var container = document.getElementById(containerId);
     var slides = container.getElementsByClassName("carousel-slide");
-    var slideIndex = n;
+    slideIndex = n;
     if (n >= slides.length) { slideIndex = 0 }
     if (n < 0) { slideIndex = slides.length - 1 }
     for (i = 0; i < slides.length; i++) {
@@ -93,7 +96,7 @@ function plusSlides(n, containerId) {
 
 function loadImages(containerId, folderName, totalImages) {
     var container = document.getElementById(containerId);
-    for (var i = 0; i <= totalImages; i++) {
+    for (var i = 1; i <= totalImages; i++) {
         var slideDiv = document.createElement('div');
         slideDiv.className = 'carousel-slide';
         var img = document.createElement('img');
@@ -113,8 +116,8 @@ function loadImages(containerId, folderName, totalImages) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadImages('carousel-container-menedez', 'menendez', 42); // Carga 29 imágenes para Casa Menéndez
-    loadImages('carousel-container-valles', 'valles', 52); // Carga 57 imágenes para Casa Valles
+    loadImages('carousel-container-menedez', 'menendez', 29); // Carga 29 imágenes para Casa Menéndez
+    loadImages('carousel-container-valles', 'valles', 57); // Carga 57 imágenes para Casa Valles
 });
 
 document.getElementById('mobile-menu').addEventListener('click', function () {
