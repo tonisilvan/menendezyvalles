@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (hash) {
         handleHashChange();
     } else {
-        showCasa('menendez');
+        showCasa('menendez'); // Mostrar por defecto Casa Menéndez
     }
 
     updateMenuIcons(hash);
@@ -27,16 +27,18 @@ function showCasa(casa) {
 
 function handleHashChange() {
     const hash = window.location.hash.substring(1);
-    if (hash === 'menendez' || hash === 'valles') {
-        showCasa(hash);
+    if (hash.includes('menendez')) {
+        showCasa('menendez');
+    } else if (hash.includes('valles')) {
+        showCasa('valles');
     }
 }
 
 function updateMenuIcons(casa) {
     const menuList = document.getElementById('menu-list');
-    menuList.innerHTML = '';
+    menuList.innerHTML = ''; // Limpiar el menú
 
-    if (casa === 'menendez') {
+    if (casa.includes('menendez')) {
         menuList.innerHTML = `
             <li><a href="index.html"><i class="fas fa-arrow-left"></i> Inicio</a></li>
             <li><a href="content.html#valles"><i class="fas fa-home"></i> Casa Valles</a></li>
@@ -47,7 +49,7 @@ function updateMenuIcons(casa) {
             <li><a href="#menendez-social"><i class="fas fa-share-alt"></i> Redes Sociales</a></li>
             <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
         `;
-    } else if (casa === 'valles') {
+    } else if (casa.includes('valles')) {
         menuList.innerHTML = `
             <li><a href="index.html"><i class="fas fa-arrow-left"></i> Inicio</a></li>
             <li><a href="content.html#menendez"><i class="fas fa-home"></i> Casa Menéndez</a></li>
@@ -92,12 +94,12 @@ function loadImages(containerId, folderName, totalImages) {
         slideDiv.appendChild(img);
         container.appendChild(slideDiv);
     }
-    showSlides(slideIndex, containerId);
+    showSlides(slideIndex, containerId); // Mostrar la primera imagen
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadImages('carousel-container-menedez', 'menedez', 29);
-    loadImages('carousel-container-valles', 'valles', 57);
+    loadImages('carousel-container-menedez', 'menedez', 29); // Carga 29 imágenes para Casa Menéndez
+    loadImages('carousel-container-valles', 'valles', 57); // Carga 57 imágenes para Casa Valles
 });
 
 document.getElementById('mobile-menu').addEventListener('click', function () {

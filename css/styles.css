@@ -89,7 +89,7 @@ header nav ul li a {
 
 /* Main styles */
 main {
-    padding-top: 80px; /* Añadir espacio entre el header y el contenido */
+    padding-top: 20px; /* Ajuste para dejar espacio entre el header y el contenido */
 }
 
 .casa-section h2 {
