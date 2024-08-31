@@ -157,7 +157,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const targetElement = document.getElementById(targetId);
 
         if (targetElement) {
-            const headerOffset = 80; // Ajusta este valor para cambiar el desplazamiento vertical
+            const headerOffset = 100; // Ajusta este valor para cambiar el desplazamiento vertical
             const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
             const offsetPosition = elementPosition - headerOffset;
 
@@ -168,4 +168,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+window.addEventListener('hashchange', function() {
+    const targetId = window.location.hash.substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+        const headerOffset = 100; // Ajusta este valor para cambiar el desplazamiento vertical
+        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+});
+
 
