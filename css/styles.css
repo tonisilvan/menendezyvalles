@@ -299,6 +299,11 @@ header nav ul li a {
     color: #004d40;
 }
 
+.container h3{
+    color: #00695c;
+    text-align: left;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
 
@@ -374,8 +379,106 @@ header nav ul li a {
         padding-bottom: 40px;
     }
 
+    .container h3{
+        color: #00695c;
+        text-align: left;
+    }
+
     .social-icons {
         flex-direction: column;
         align-items: flex-start;
     }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.logo-container h1 {
+    animation: fadeInLeft 1.5s ease-in-out forwards;
+    opacity: 0; /* Inicia la animación con el texto invisible */
+}
+
+@media (max-width: 768px) {
+    .logo-container h1 {
+        font-size: 20px;
+        animation: fadeInLeft 1s ease-in-out forwards; /* Ajuste para dispositivos móviles */
+    }
+}
+
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.logo-container h2 {
+    animation: fadeInRight 1.5s ease-in-out forwards;
+    opacity: 0; /* Inicia la animación con el texto invisible */
+    animation-delay: 0.5s; /* Retardo para que aparezca después de 'Casas de aldea Menéndez' */
+}
+
+@media (max-width: 768px) {
+    .logo-container h2 {
+        font-size: 16px;
+        animation: fadeInRight 1s ease-in-out forwards;
+    }
+}
+
+/* Header */
+header {
+    background-color: #00695c;
+    color: white;
+    padding: 5px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 12vh; /* Ajuste de la altura del header */
+    overflow: hidden; /* Para ocultar cualquier desbordamiento */
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Asegura que el video no se desborde */
+    z-index: -1; /* Para que el video esté detrás del contenido */
+}
+
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Para asegurar que el contenido del header se ve bien sobre el video */
+header .container {
+    position: relative;
+    z-index: 2; /* Coloca el contenido sobre el video */
+    display: flex;
+    justify-content: flex-start; /* Alinea el contenido al inicio */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    padding: 0 20px; /* Añade padding lateral para separar el menú del borde */
 }

@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuList = document.getElementById('menu-items');
+    const mobileMenu = document.getElementById('mobile-menu');
     const headerTitle = document.querySelector('.logo-container h1');
+    const headerElement = document.querySelector('header');
 
     if (!menuList || !headerTitle) {
         console.error('Menu items container or header title not found');
@@ -15,6 +17,53 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     updateMenuIcons(hash); // Actualizar iconos del menú según la sección
+
+    // Captura los clics en los enlaces de navegación
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault(); // Cancela el comportamiento por defecto
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                const headerOffset = 140; // Ajusta este valor según la altura de tu encabezado
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset;
+
+                // Realiza el desplazamiento suave
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Actualiza la URL sin recargar la página
+                history.pushState(null, null, `#${targetId}`);
+
+                // Colapsa el menú en la versión móvil
+                if (window.innerWidth <= 768) {
+                    mobileMenu.classList.remove('open');
+                    headerElement.classList.remove('nav-active');
+                }
+            }
+        });
+    });
+
+    // Para manejar la carga de la página con un hash en la URL
+    const initialHash = window.location.hash.substring(1);
+    if (initialHash) {
+        const targetElement = document.getElementById(initialHash);
+        if (targetElement) {
+            const headerOffset = 100; // Ajusta este valor según la altura de tu encabezado
+            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
 });
 
 window.addEventListener('hashchange', handleHashChange);
@@ -133,8 +182,8 @@ function loadImages(containerId, folderName, totalImages) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadImages('carousel-container-menedez', 'menendez', 42); // Carga 29 imágenes para Casa Menéndez
-    loadImages('carousel-container-valles', 'valles', 51); // Carga 57 imágenes para Casa Valles
+    loadImages('carousel-container-menedez', 'menendez', 42); // Carga 42 imágenes para Casa Menéndez
+    loadImages('carousel-container-valles', 'valles', 51); // Carga 51 imágenes para Casa Valles
 });
 
 document.getElementById('mobile-menu').addEventListener('click', function () {
@@ -144,54 +193,9 @@ document.getElementById('mobile-menu').addEventListener('click', function () {
 
 document.querySelectorAll('header nav ul li a').forEach(function (link) {
     link.addEventListener('click', function () {
-        document.getElementById('mobile-menu').classList.remove('open');
-        document.querySelector('header').classList.remove('nav-active');
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Captura los clics en los enlaces de navegación
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault(); // Cancela el comportamiento por defecto
-
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                const headerOffset = 100; // Ajusta este valor según la altura de tu encabezado
-                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - headerOffset;
-
-                // Realiza el desplazamiento suave
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-
-                // Actualiza la URL sin recargar la página
-                history.pushState(null, null, `#${targetId}`);
-            }
-        });
-    });
-
-    // Para manejar la carga de la página con un hash en la URL
-    const initialHash = window.location.hash.substring(1);
-    if (initialHash) {
-        const targetElement = document.getElementById(initialHash);
-        if (targetElement) {
-            const headerOffset = 500; // Ajusta este valor según la altura de tu encabezado
-            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
+        if (window.innerWidth <= 768) {
+            document.getElementById('mobile-menu').classList.remove('open');
+            document.querySelector('header').classList.remove('nav-active');
         }
-    }
+    });
 });
-
-
-
-
