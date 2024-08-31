@@ -3,14 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (hash) {
         handleHashChange();
     } else {
-        showCasa('menendez'); // Mostrar por defecto Casa Menéndez
+        showCasa('menendez');
     }
+
+    updateMenuIcons(hash);
 });
 
 window.addEventListener('hashchange', handleHashChange);
 
 function showCasa(casa) {
-    // Asegurarse de que la página se desplaza al principio
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -28,49 +29,37 @@ function handleHashChange() {
     const hash = window.location.hash.substring(1);
     if (hash === 'menendez' || hash === 'valles') {
         showCasa(hash);
-    } else if (hash.includes('menendez') || hash.includes('valles')) {
-        // Navegación interna dentro de las secciones de la casa
-        const [casa, section] = hash.split('-');
-        showCasa(casa);
-        setTimeout(() => {
-            document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
-        }, 300);
     }
 }
 
 function updateMenuIcons(casa) {
     const menuList = document.getElementById('menu-list');
-    if (!menuList) return; // Evita el error si menuList es nulo
-
-    menuList.innerHTML = ''; // Limpiar el menú
+    menuList.innerHTML = '';
 
     if (casa === 'menendez') {
         menuList.innerHTML = `
             <li><a href="index.html"><i class="fas fa-arrow-left"></i> Inicio</a></li>
             <li><a href="content.html#valles"><i class="fas fa-home"></i> Casa Valles</a></li>
-            <li><a href="content.html#menendez-equipamiento"><i class="fas fa-cogs"></i> Equipamiento</a></li>
-            <li><a href="content.html#menendez-actividades"><i class="fas fa-hiking"></i> Actividades</a></li>
-            <li><a href="content.html#menendez-localizacion"><i class="fas fa-map-marker-alt"></i> Localización</a></li>
-            <li><a href="content.html#menendez-tarifas"><i class="fas fa-euro-sign"></i> Tarifas</a></li>
-            <li><a href="content.html#social-menendez"><i class="fas fa-share-alt"></i> Redes Sociales</a></li>
-            <li><a href="content.html#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+            <li><a href="#menendez-equipamiento"><i class="fas fa-cogs"></i> Equipamiento</a></li>
+            <li><a href="#menendez-actividades"><i class="fas fa-hiking"></i> Actividades</a></li>
+            <li><a href="#menendez-localizacion"><i class="fas fa-map-marker-alt"></i> Localización</a></li>
+            <li><a href="#menendez-tarifas"><i class="fas fa-euro-sign"></i> Tarifas</a></li>
+            <li><a href="#menendez-social"><i class="fas fa-share-alt"></i> Redes Sociales</a></li>
+            <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
         `;
     } else if (casa === 'valles') {
         menuList.innerHTML = `
             <li><a href="index.html"><i class="fas fa-arrow-left"></i> Inicio</a></li>
             <li><a href="content.html#menendez"><i class="fas fa-home"></i> Casa Menéndez</a></li>
-            <li><a href="content.html#valles-equipamiento"><i class="fas fa-cogs"></i> Equipamiento</a></li>
-            <li><a href="content.html#valles-actividades"><i class="fas fa-hiking"></i> Actividades</a></li>
-            <li><a href="content.html#valles-localizacion"><i class="fas fa-map-marker-alt"></i> Localización</a></li>
-            <li><a href="content.html#valles-tarifas"><i class="fas fa-euro-sign"></i> Tarifas</a></li>
-            <li><a href="content.html#social-valles"><i class="fas fa-share-alt"></i> Redes Sociales</a></li>
-            <li><a href="content.html#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+            <li><a href="#valles-equipamiento"><i class="fas fa-cogs"></i> Equipamiento</a></li>
+            <li><a href="#valles-actividades"><i class="fas fa-hiking"></i> Actividades</a></li>
+            <li><a href="#valles-localizacion"><i class="fas fa-map-marker-alt"></i> Localización</a></li>
+            <li><a href="#valles-tarifas"><i class="fas fa-euro-sign"></i> Tarifas</a></li>
+            <li><a href="#valles-social"><i class="fas fa-share-alt"></i> Redes Sociales</a></li>
+            <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
         `;
     }
 }
-
-// Declara slideIndex fuera de las funciones
-let slideIndex = 0;
 
 function showSlides(n, containerId) {
     var i;
@@ -103,12 +92,12 @@ function loadImages(containerId, folderName, totalImages) {
         slideDiv.appendChild(img);
         container.appendChild(slideDiv);
     }
-    showSlides(slideIndex, containerId); // Mostrar la primera imagen
+    showSlides(slideIndex, containerId);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadImages('carousel-container-menedez', 'menedez', 29); // Carga 29 imágenes para Casa Menéndez
-    loadImages('carousel-container-valles', 'valles', 57); // Carga 57 imágenes para Casa Valles
+    loadImages('carousel-container-menedez', 'menedez', 29);
+    loadImages('carousel-container-valles', 'valles', 57);
 });
 
 document.getElementById('mobile-menu').addEventListener('click', function () {
