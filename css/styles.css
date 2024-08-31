@@ -33,7 +33,7 @@ header .container {
 .logo-container {
     text-align: center;
     width: 100%;
-    margin-top: 100px; /* Adds top space for desktop version */
+    /* Eliminado el margin-top: 100px */
 }
 
 h1 {
@@ -46,11 +46,17 @@ h1 {
     margin-bottom: 20px;
 }
 
+header nav {
+    flex-grow: 1; /* Para que el menú ocupe todo el espacio disponible y no se apriete a la derecha */
+}
+
 header nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Alinea el menú de navegación al centro */
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 header nav ul li {
@@ -207,7 +213,7 @@ header nav ul li a {
 }
 
 .contact-form input,
-.contact-form textarea {
+contact-form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
