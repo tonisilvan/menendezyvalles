@@ -157,9 +157,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const targetElement = document.getElementById(targetId);
 
         if (targetElement) {
-            const offset = 180; // Ajusta este valor para cambiar el desplazamiento vertical
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - offset;
+            const headerOffset = 80; // Ajusta este valor para cambiar el desplazamiento vertical
+            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerOffset;
 
             window.scrollTo({
                 top: offsetPosition,
@@ -168,3 +168,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
