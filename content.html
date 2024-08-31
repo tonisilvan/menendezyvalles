@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casas de aldea Menéndez y Valles - Turismo rural</title>
+    <meta name="description" content="Casas rurales para alquilar en Oballo y Villacibrán, en Cangas del Narcea. Disfruta de un ambiente rural con todas las comodidades.">
+    <meta name="keywords" content="casa rural, Oballo, Villacibrán, Cangas del Narcea, alquiler rural, naturaleza, Asturias">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <h1>Casas de aldea Menéndez y Valles</h1>
+                <h2>Turismo rural</h2>
+            </div>
+            <div class="mobile-menu" id="mobile-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#menendez" onclick="showCasa('menendez')"><i class="fas fa-home"></i> Casa Menéndez</a></li>
+                    <li><a href="#valles" onclick="showCasa('valles')"><i class="fas fa-home"></i> Casa Valles</a></li>
+                    <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Casa Menéndez -->
+        <div id="menendez" class="casa-section">
+            <div class="container">
+                <h2 id="menendez-title">Casa Menéndez - Oballo</h2>
+                <img src="images/logomenendez.png" alt="Logo Casa Menéndez" class="logo">
+                <div class="content-row">
+                    <div class="text-column">
+                        <p>Acogedora casa rural situada en la aldea de Oballo, en Cangas del Narcea, dentro del Parque Natural de las Fuentes del Narcea y de Ibias, con vistas a la Reserva de la Biosfera de Muniellos y a escasos kilometros de su entrada y centro de interpretación.</p>
+                    </div>
+                </div>
+                
+                <div class="carousel">
+                    <div class="carousel-container" id="carousel-container-menedez">
+                        <!-- Aquí se generarán las imágenes del carrusel -->
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1, 'carousel-container-menedez')">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 'carousel-container-menedez')">&#10095;</a>
+                </div>
+                
+                <p>Construida en piedra y madera, cuenta con un amplio equipamiento, un jardín con parrilla, una terraza y un aparcamiento privado para varios automóviles. Un lugar ideal para pasar tus fines de semana o tus vacaciones en un ambiente rural, lleno de tranquilidad y sosiego en medio de la naturaleza. La casa se alquila completa y tiene una capacidad máxima de 10 plazas (4 habitaciones dobles y 2 camas supletorias opcionales).</p>
+                
+                <div class="features">
+                    <h3>Equipamiento</h3>
+                    <ul>
+                        <li><i class="fas fa-fire"></i> Amplio salón-cocina con chimenea y TV.</li>
+                        <li><i class="fas fa-bed"></i> 4 habitaciones dobles con baño.</li>
+                        <li><i class="fas fa-utensils"></i> Cocina equipada con microondas, lavadora, frigorífico.</li>
+                        <li><i class="fas fa-temperature-high"></i> Calefacción y agua caliente.</li>
+                        <li><i class="fas fa-umbrella-beach"></i> Terraza y patio con vistas a Muniellos.</li>
+                        <li><i class="fas fa-tree"></i> Zona verde con árboles y jardín, barbacoa.</li>
+                        <li><i class="fas fa-parking"></i> Aparcamiento privado.</li>
+                    </ul>
+                </div>
+                <div class="activities">
+                    <h3>Actividades</h3>
+                    <p>Las actividades en contacto con la naturaleza tienen un entorno ideal en el Parque Natural de las Fuentes del Narcea e Ibias (Declarado Reserva de la Biosfera por la Unesco) que integra La Reserva Biológica de Muniellos, con especial protección.
+                    500 km2 de impresionante naturaleza con montañas, valles, ríos y bosques que configuran este espacio natural que se ha conservado en estado casi virgen, animales protegidos como nutrias, urogallos y osos... y un silencio que sólo rompe el canto de los pájaros, donde podrás disfrutar de impresionantes rutas de senderismo o en bicicleta de montaña.
+                    En la zona encontrarás además numerosas actividades y visitas culturales, Cangas del Narcea es uno de los municipios más relevantes del Principado en cuanto a riqueza artística, con un gran número de pequeños núcleos rurales diseminados a lo largo de su territorio en los que se conservan elementos artísticos importantes (iglesias, ermitas, tallas románicas y góticas...), destacando el Monasterio de San Juan Bautista de Corias, la Basílica de Sta. María Magdalena, el Santuario del Acebo e innumerables palacios, muestras de arquitectura popular, y desde donde se pueden contemplar hermosos paisajes.
+                    Solicita tu permiso para visitar la Reserva Biológica de Muniellos.</p>
+                    <ul>
+                        <li><i class="fas fa-hiking"></i> Rutas de senderismo</li>
+                        <li><i class="fas fa-bicycle"></i> Bicicleta de montaña</li>
+                        <li><i class="fas fa-landmark"></i> Visitas culturales en Cangas del Narcea</li>
+                        <li><i class="fas fa-binoculars"></i> Observación de la fauna en la Reserva de Muniellos</li>
+                    </ul>
+                </div>
+                <div class="location">
+                    <h3>Localización</h3>
+                    <p>Oballo, Cangas del Narcea - Principado de Asturias - España</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2928.1229129235964!2d-6.751527024368169!3d43.05784231620326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd303b3f39dcd737%3A0x3e4cf4392b2697a1!2sOballo%2C%2033800%20Cangas%20del%20Narcea%2C%20Asturias!5e0!3m2!1ses!2ses!4v1693117171398!5m2!1ses!2ses" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="tarifas">
+                    <h3>Tarifas</h3>
+                    <p>Alquiler casa íntegra (10 personas) - 250,00<i class="fas fa-euro-sign"></i> día</p>
+                    <p>Consultar tarifas especiales en temporada baja o largas estancias.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Casa Valles -->
+        <div id="valles" class="casa-section" style="display: none;">
+            <div class="container">
+                <h2 id="valles-title">Casa Valles - Villacibrán</h2>
+                <img src="images/logovalles.png" alt="Logo Casa Valles" class="logo">
+                <div class="content-row">
+                    <div class="text-column">
+                        <p>Acogedora casa rural situada en la aldea de Villacibrán, en el concejo de Cangas del Narcea, dentro del Parque Natural de las Fuentes del Narcea y de Ibias, con inmejorables vistas al Valle de Naviego, a escasos kilometros de la Estación Invernal de Leitariegos y a solo quince minutos de la villa Cangas del Narcea.</p>
+                    </div>
+                </div>
+                
+                <div class="carousel">
+                    <div class="carousel-container" id="carousel-container-valles">
+                        <!-- Aquí se generarán las imágenes del carrusel -->
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1, 'carousel-container-valles')">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1, 'carousel-container-valles')">&#10095;</a>
+                </div>
+                
+                <p>Es un lugar ideal para pasar tus fines de semana de esquí, tus vacaciones o para simplemente relajarte y disfrutar de un ambiente rural, lleno de tranquilidad y sosiego en el medio de la naturaleza en un pueblo asturiano. La casa se alquila completa y tiene una capacidad máxima de 10 plazas (4 habitaciones dobles y 2 camas supletorias opcionales).</p>
+
+                <div class="features">
+                    <h3>Equipamiento</h3>
+                    <ul>
+                        <li><i class="fas fa-fire"></i> Amplio salón-cocina con chimenea y TV.</li>
+                        <li><i class="fas fa-bed"></i> 4 habitaciones dobles con baño.</li>
+                        <li><i class="fas fa-utensils"></i> Cocina equipada con vitrocerámica, horno, frigorífico.</li>
+                        <li><i class="fas fa-temperature-high"></i> Calefacción y agua caliente.</li>
+                        <li><i class="fas fa-umbrella-beach"></i> Terraza y patio con vistas al Valle de Naviego.</li>
+                        <li><i class="fas fa-tree"></i> Zona verde con árboles y jardín, barbacoa.</li>
+                        <li><i class="fas fa-parking"></i> Aparcamiento privado y accesible para discapacitados.</li>
+                    </ul>
+                </div>
+                <div class="activities">
+                    <h3>Actividades</h3>
+                    <p>Las actividades en contacto con la naturaleza tienen un entorno ideal en el Parque Natural de las Fuentes del Narcea e Ibias (Declarado Reserva de la Biosfera por la Unesco) que integra La Reserva Biológica de Muniellos, con especial protección.
+                    La estación de esquí de Leitariegos a 15 Km permite la práctica de deportes de invierno como esquí, snowboard,... Grandes bosques, animales protegidos como urogallos y osos... y un silencio que sólo rompe el canto de los pájaros, donde podrás disfrutar de impresionantes rutas de senderismo o en bicicleta de montaña.
+                    En la zona encontrarás además numerosas actividades y visitas culturales, Cangas del Narcea es uno de los municipios más relevantes del Principado en cuanto a riqueza artística, con un gran número de pequeños núcleos rurales diseminados a lo largo de su territorio en los que se conservan elementos artísticos importantes (iglesias, ermitas, tallas románicas y góticas...), destacando el Monasterio de San Juan Bautista de Corias, la Basílica de Sta. María Magdalena, el Santuario del Acebo e innumerables palacios, muestras de arquitectura popular, y desde donde se pueden contemplar hermosos paisajes.</p>
+                    <ul>
+                        <li><i class="fas fa-hiking"></i> Rutas de senderismo</li>
+                        <li><i class="fas fa-bicycle"></i> Bicicleta de montaña</li>
+                        <li><i class="fas fa-landmark"></i> Visitas culturales en Cangas del Narcea</li>
+                        <li><i class="fas fa-skiing"></i> Deportes de invierno en Leitariegos</li>
+                    </ul>
+                </div>
+                <div class="location">
+                    <h3>Localización</h3>
+                    <p>Villacibrán, Cangas del Narcea - Principado de Asturias - España</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2928.086640396992!2d-6.650525724368219!3d43.06185461619382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd30395ec9f173d9%3A0x8bb4b17183cb2cc8!2sVillacibr%C3%A1n%2C%2033800%20Cangas%20del%20Narcea%2C%20Asturias!5e0!3m2!1ses!2ses!4v1693117171398!5m2!1ses!2ses" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="tarifas">
+                    <h3>Tarifas</h3>
+                    <p>Alquiler casa íntegra (10 personas) - 250,00<i class="fas fa-euro-sign"></i> día</p>
+                    <p>Consultar tarifas especiales en temporada baja o largas estancias.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="section">
+            <div class="container">
+                <h2>Contacto</h2>
+                <p><strong><i class="fas fa-phone"></i> Teléfono de contacto (Marcos):</strong> 
+                    <a href="tel:+34629219007">629219007</a>
+                </p>
+                <p><strong><i class="fas fa-envelope"></i> Correo electrónico:</strong> 
+                    <a href="mailto:marcosgomeznarcea@gmail.com">marcosgomeznarcea@gmail.com</a>
+                </p>
+                <h3>Formulario de Contacto</h3>
+                <form action="https://formspree.io/f/marcosgomeznarcea@gmail.com" method="POST" class="contact-form">
+                    <input type="text" name="name" placeholder="Nombre" required>
+                    <input type="email" name="email" placeholder="Correo Electrónico" required>
+                    <textarea name="message" placeholder="Mensaje" required></textarea>
+                    <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Casas de aldea Menéndez y Valles. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showCasa(casa) {
+            document.querySelectorAll('.casa-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(casa).style.display = 'block';
+            const target = document.getElementById(`${casa}-title`);
+            window.scrollTo({
+                top: target.offsetTop - 200, // Ajuste para que no quede tapado por el header
+                behavior: 'smooth'
+            });
+        }
+
+        // Mostrar por defecto Casa Menéndez
+        showCasa('menendez');
+
+        var slideIndex = 0;
+
+        function showSlides(n, containerId) {
+            var i;
+            var container = document.getElementById(containerId);
+            var slides = container.getElementsByClassName("carousel-slide");
+            if (n >= slides.length) {slideIndex = 0}
+            if (n < 0) {slideIndex = slides.length - 1}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+        function plusSlides(n, containerId) {
+            showSlides(slideIndex += n, containerId);
+        }
+
+        function loadImages(containerId, folderName, totalImages) {
+            var container = document.getElementById(containerId);
+            for (var i = 1; i <= totalImages; i++) {
+                var slideDiv = document.createElement('div');
+                slideDiv.className = 'carousel-slide';
+                var img = document.createElement('img');
+                img.src = `images/${folderName}/${i}.jpeg`;
+                img.alt = 'Imagen ' + i;
+                img.className = 'carousel-image';
+                img.onclick = function() {
+                    this.classList.toggle('fullscreen');
+                };
+                slideDiv.appendChild(img);
+                container.appendChild(slideDiv);
+            }
+            showSlides(slideIndex, containerId); // Mostrar la primera imagen
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadImages('carousel-container-menedez', 'menedez', 29); // Carga 29 imágenes para Casa Menéndez
+            loadImages('carousel-container-valles', 'valles', 57); // Carga 57 imágenes para Casa Valles
+        });
+
+        document.getElementById('mobile-menu').addEventListener('click', function () {
+            this.classList.toggle('open');
+            document.querySelector('header').classList.toggle('nav-active');
+        });
+
+        document.querySelectorAll('header nav ul li a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                document.getElementById('mobile-menu').classList.remove('open');
+                document.querySelector('header').classList.remove('nav-active');
+            });
+        });
+    </script>
+</body>
+
+</html>
