@@ -37,7 +37,7 @@
         <!-- Sección Casa Menéndez -->
         <div id="menendez" class="casa-section">
             <div class="container">
-                <h2>Casa Menéndez - Oballo</h2>
+                <h2 id="menendez-title">Casa Menéndez - Oballo</h2>
                 <img src="images/logomenendez.png" alt="Logo Casa Menéndez" class="logo">
                 <div class="content-row">
                     <div class="text-column">
@@ -95,7 +95,7 @@
         <!-- Sección Casa Valles -->
         <div id="valles" class="casa-section" style="display: none;">
             <div class="container">
-                <h2>Casa Valles - Villacibrán</h2>
+                <h2 id="valles-title">Casa Valles - Villacibrán</h2>
                 <img src="images/logovalles.png" alt="Logo Casa Valles" class="logo">
                 <div class="content-row">
                     <div class="text-column">
@@ -175,6 +175,11 @@
                 section.style.display = 'none';
             });
             document.getElementById(casa).style.display = 'block';
+            const target = document.getElementById(`${casa}-title`);
+            window.scrollTo({
+                top: target.offsetTop - 100, // Ajuste para que no quede tapado por el header
+                behavior: 'smooth'
+            });
         }
 
         // Mostrar por defecto Casa Menéndez
