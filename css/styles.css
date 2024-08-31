@@ -17,7 +17,7 @@ body {
 header {
     background-color: #00695c;
     color: white;
-    padding: 10px 0;  /* Reducido el padding para ajustar mejor en todas las versiones */
+    padding: 10px 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -37,12 +37,12 @@ header .container {
 
 h1 {
     font-size: 24px;
-    margin: 0; /* Elimina cualquier margen para asegurar alineación */
+    margin: 0;
 }
 
 .logo {
-    max-height: 50px; /* Ajusta el tamaño del logo para mejor alineación */
-    margin-bottom: 0; /* Elimina margen inferior del logo */
+    max-height: 50px;
+    margin-bottom: 0;
 }
 
 header nav {
@@ -84,7 +84,7 @@ header nav ul li a {
 
 /* Casa Section */
 .casa-section {
-    margin-top: 100px;
+    margin-top: 160px; /* Aumentado para dejar espacio en la versión móvil */
     scroll-margin-top: 80px;
 }
 
@@ -296,5 +296,10 @@ header nav ul li a {
     /* Ajuste para eliminar el margen superior en móvil */
     h1 {
         padding-top: 10px;
+    }
+
+    /* Aumenta el espacio superior en la versión móvil para evitar que los títulos se solapen con el menú */
+    .casa-section {
+        margin-top: 180px;
     }
 }
