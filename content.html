@@ -203,9 +203,8 @@
                 section.style.display = 'none';
             });
             document.getElementById(casa).style.display = 'block';
-            const target = document.getElementById(`${casa}-title`);
             window.scrollTo({
-                top: target.offsetTop - 200, // Ajuste para que no quede tapado por el header
+                top: 0, // Desplaza al principio de la página
                 behavior: 'smooth'
             });
         }
