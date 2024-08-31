@@ -150,7 +150,7 @@ document.querySelectorAll('header nav ul li a').forEach(function (link) {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Para los clics en enlaces de navegación
+    // Captura los clics en los enlaces de navegación
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
-                const headerOffset = 100; // Ajusta este valor según tu encabezado
+                const headerOffset = 100; // Ajusta este valor según la altura de tu encabezado
                 const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                 const offsetPosition = elementPosition - headerOffset;
 
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (initialHash) {
         const targetElement = document.getElementById(initialHash);
         if (targetElement) {
-            const headerOffset = 100; // Ajusta este valor según tu encabezado
+            const headerOffset = 100; // Ajusta este valor según la altura de tu encabezado
             const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
             const offsetPosition = elementPosition - headerOffset;
 
@@ -190,6 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
 
 
 
