@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         showCasa('menendez'); // Mostrar por defecto Casa Menéndez
     }
-
-    updateMenuIcons(hash); // Actualizar iconos del menú según la sección
 });
 
 window.addEventListener('hashchange', handleHashChange);
@@ -32,7 +30,7 @@ function handleHashChange() {
         showCasa(hash);
     } else if (hash.includes('menendez') || hash.includes('valles')) {
         // Navegación interna dentro de las secciones de la casa
-        const [casa, section] = hash.split(' ');
+        const [casa, section] = hash.split('-');
         showCasa(casa);
         setTimeout(() => {
             document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
@@ -42,16 +40,18 @@ function handleHashChange() {
 
 function updateMenuIcons(casa) {
     const menuList = document.getElementById('menu-list');
+    if (!menuList) return; // Evita el error si menuList es nulo
+
     menuList.innerHTML = ''; // Limpiar el menú
 
     if (casa === 'menendez') {
         menuList.innerHTML = `
             <li><a href="index.html"><i class="fas fa-arrow-left"></i> Inicio</a></li>
             <li><a href="content.html#valles"><i class="fas fa-home"></i> Casa Valles</a></li>
-            <li><a href="content.html#menendez%20equipamiento"><i class="fas fa-cogs"></i> Equipamiento</a></li>
-            <li><a href="content.html#menendez%20actividades"><i class="fas fa-hiking"></i> Actividades</a></li>
-            <li><a href="content.html#menendez%20localizacion"><i class="fas fa-map-marker-alt"></i> Localización</a></li>
-            <li><a href="content.html#menendez%20tarifas"><i class="fas fa-euro-sign"></i> Tarifas</a></li>
+            <li><a href="content.html#menendez-equipamiento"><i class="fas fa-cogs"></i> Equipamiento</a></li>
+            <li><a href="content.html#menendez-actividades"><i class="fas fa-hiking"></i> Actividades</a></li>
+            <li><a href="content.html#menendez-localizacion"><i class="fas fa-map-marker-alt"></i> Localización</a></li>
+            <li><a href="content.html#menendez-tarifas"><i class="fas fa-euro-sign"></i> Tarifas</a></li>
             <li><a href="content.html#social-menendez"><i class="fas fa-share-alt"></i> Redes Sociales</a></li>
             <li><a href="content.html#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
         `;
@@ -59,15 +59,18 @@ function updateMenuIcons(casa) {
         menuList.innerHTML = `
             <li><a href="index.html"><i class="fas fa-arrow-left"></i> Inicio</a></li>
             <li><a href="content.html#menendez"><i class="fas fa-home"></i> Casa Menéndez</a></li>
-            <li><a href="content.html#valles%20equipamiento"><i class="fas fa-cogs"></i> Equipamiento</a></li>
-            <li><a href="content.html#valles%20actividades"><i class="fas fa-hiking"></i> Actividades</a></li>
-            <li><a href="content.html#valles%20localizacion"><i class="fas fa-map-marker-alt"></i> Localización</a></li>
-            <li><a href="content.html#valles%20tarifas"><i class="fas fa-euro-sign"></i> Tarifas</a></li>
+            <li><a href="content.html#valles-equipamiento"><i class="fas fa-cogs"></i> Equipamiento</a></li>
+            <li><a href="content.html#valles-actividades"><i class="fas fa-hiking"></i> Actividades</a></li>
+            <li><a href="content.html#valles-localizacion"><i class="fas fa-map-marker-alt"></i> Localización</a></li>
+            <li><a href="content.html#valles-tarifas"><i class="fas fa-euro-sign"></i> Tarifas</a></li>
             <li><a href="content.html#social-valles"><i class="fas fa-share-alt"></i> Redes Sociales</a></li>
             <li><a href="content.html#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
         `;
     }
 }
+
+// Declara slideIndex fuera de las funciones
+let slideIndex = 0;
 
 function showSlides(n, containerId) {
     var i;
