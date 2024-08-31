@@ -95,6 +95,34 @@
                 transform: translateY(0);
             }
         }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            .logo-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .logo-links a img {
+                max-width: 100px;
+            }
+
+            .content {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 
@@ -112,10 +140,10 @@
 
         <div class="logo-links">
             <a href="content.html#menendez">
-                <img src="/images/logomenendez.png" alt="Casa Menéndez">
+                <img src="images/logomenendez.png" alt="Casa Menéndez">
             </a>
             <a href="content.html#valles">
-                <img src="/images/logovalles.png" alt="Casa Valles">
+                <img src="images/logovalles.png" alt="Casa Valles">
             </a>
         </div>
     </div>
