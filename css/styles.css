@@ -258,6 +258,22 @@ header nav ul li a {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    h1, h2 {
+        font-size: 18px; /* Ajusta el tamaño de la fuente */
+        margin-top: 10px; /* Reduce el margen superior */
+        margin-bottom: 5px; /* Reduce el margen inferior */
+    }
+    
+    /* Ajustes adicionales para que el contenido debajo del header no se superponga */
+    .container {
+        padding-top: 20px; /* Ajusta el padding-top si es necesario */
+    }
+    
+    .casa-section {
+        margin-top: 100px; /* Ajusta el margen superior de las secciones para evitar superposición */
+    }
+
     .mobile-menu {
         display: flex;
     }
