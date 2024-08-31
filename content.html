@@ -283,6 +283,19 @@
                 document.querySelector('header').classList.remove('nav-active');
             });
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Siempre desplázate al principio de la página al cargarla
+            window.scrollTo(0, 0);
+
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                handleHashChange();
+            } else {
+                showCasa('menendez'); // Mostrar por defecto Casa Menéndez
+            }
+        });
+        
     </script>
     
 </body>
