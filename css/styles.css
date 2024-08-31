@@ -36,12 +36,12 @@ header .container {
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 32px; /* Tamaño más grande para h1 en versión desktop */
     margin: 0;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 24px; /* Tamaño más pequeño para h2 en versión desktop */
     margin: 0;
 }
 
@@ -73,6 +73,20 @@ header nav ul li a {
     font-weight: bold;
 }
 
+/* Mobile menu */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
 /* Casa Section */
 .casa-section {
     margin-top: 160px;
@@ -83,6 +97,11 @@ header nav ul li a {
     text-align: center;
     font-size: 28px;
     color: #00695c;
+}
+
+.casa-section .logo {
+    display: block;
+    margin: 0 auto;
 }
 
 .features,
@@ -238,25 +257,71 @@ header nav ul li a {
     margin-top: 20px;
 }
 
+.footer p {
+    margin: 0;
+}
+
+/* Redes Sociales */
+.social-section {
+    margin-top: 40px;
+}
+
+.social-section h3 {
+    color: #00695c;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.social-icons a i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #00695c;
+}
+
+.social-icons a:hover i {
+    color: #004d40;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+
     h1 {
-        font-size: 20px;
-        margin-top: 0;
-        padding-top: 0px;
+        font-size: 20px; /* Tamaño de fuente para h1 */
+        margin-top: 0; /* Elimina el margen superior */
+        padding-top: 0px; /* Reduce el padding superior */
     }
 
     h2 {
-        font-size: 17px;
-        margin-top: 0px;
-        margin-bottom: 5px;
+        font-size: 17px; /* Tamaño de fuente para h2 */
+        margin-top: 0px; /* Reducir margen superior */
+        margin-bottom: 5px; /* Reducir margen inferior */
     }
     .casa-section h2 {
         font-size: 25px;
     }
 
+    .container {
+        padding-top: 20px; /* Ajusta el padding-top si es necesario */
+    }
+
     .casa-section {
-        margin-top: 200px;
+        margin-top: 200px; /* Ajusta el margen superior de las secciones para evitar superposición */
     }
 
     .mobile-menu {
@@ -294,17 +359,26 @@ header nav ul li a {
         color: white;
     }
 
+    /* Aumenta el espacio superior en la versión móvil para evitar que los títulos se solapen con el menú */
     .casa-section {
         margin-top: 180px;
     }
 
+    /* Ajuste para el h3 de la sección de contacto */
     .section h3 {
         color: #00695c;
         text-align: left;
         margin-top: 40px;
     }
 
+    /* Padding bottom para la sección de contacto */
     #contacto {
-        padding-bottom: 40px;
+        padding-bottom: 40px; /* Añade espacio en la parte inferior de la sección */
+    }
+
+    /* Redes Sociales */
+    .social-icons {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }

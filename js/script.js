@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const menuList = document.getElementById('menu-items');
+    if (!menuList) {
+        console.error('Menu items container not found');
+        return;
+    }
+
     const hash = window.location.hash.substring(1);
     if (hash) {
         handleHashChange();
@@ -68,12 +74,11 @@ function updateMenuIcons(casa) {
     }
 }
 
-let slideIndex = 0;
-
 function showSlides(n, containerId) {
     var i;
     var container = document.getElementById(containerId);
     var slides = container.getElementsByClassName("carousel-slide");
+    var slideIndex = n;
     if (n >= slides.length) { slideIndex = 0 }
     if (n < 0) { slideIndex = slides.length - 1 }
     for (i = 0; i < slides.length; i++) {
@@ -96,7 +101,7 @@ function loadImages(containerId, folderName, totalImages) {
         img.alt = 'Imagen ' + i;
         img.className = 'carousel-image';
         img.onerror = function() {
-            console.error(`Image ${img.src} not found.`);
+            console.error(`Image ${this.src} not found.`);
         };
         img.onclick = function () {
             this.classList.toggle('fullscreen');
@@ -104,12 +109,12 @@ function loadImages(containerId, folderName, totalImages) {
         slideDiv.appendChild(img);
         container.appendChild(slideDiv);
     }
-    showSlides(slideIndex, containerId); 
+    showSlides(slideIndex, containerId); // Mostrar la primera imagen
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadImages('carousel-container-menedez', 'menedez', 29);
-    loadImages('carousel-container-valles', 'valles', 57);
+    loadImages('carousel-container-menedez', 'menedez', 29); // Carga 29 imágenes para Casa Menéndez
+    loadImages('carousel-container-valles', 'valles', 57); // Carga 57 imágenes para Casa Valles
 });
 
 document.getElementById('mobile-menu').addEventListener('click', function () {
