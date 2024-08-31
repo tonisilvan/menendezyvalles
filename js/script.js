@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuList = document.getElementById('menu-items');
-    if (!menuList) {
-        console.error('Menu items container not found');
+    const headerTitle = document.querySelector('.logo-container h1');
+
+    if (!menuList || !headerTitle) {
+        console.error('Menu items container or header title not found');
         return;
     }
 
@@ -31,6 +33,7 @@ function showCasa(casa) {
     if (casaElement) {
         casaElement.style.display = 'block';
         updateMenuIcons(casa);
+        updateHeaderTitle(casa);
     }
 }
 
@@ -52,25 +55,39 @@ function updateMenuIcons(casa) {
     if (casa === 'menendez') {
         menuList.innerHTML = `
             <li><a href="index.html"><i class="fas fa-arrow-left"></i> Inicio</a></li>
-            <li><a href="content.html#menendez"><i class="fas fa-home"></i> Casa</a></li>
+            <li><a href="content.html#menendez"><i class="fas fa-home"></i> Casa Menéndez</a></li>
             <li><a href="#menendez-equipamiento"><i class="fas fa-cogs"></i> Equipamiento</a></li>
             <li><a href="#menendez-actividades"><i class="fas fa-hiking"></i> Actividades</a></li>
             <li><a href="#menendez-localizacion"><i class="fas fa-map-marker-alt"></i> Localización</a></li>
             <li><a href="#menendez-tarifas"><i class="fas fa-euro-sign"></i> Tarifas</a></li>
-            <li><a href="#menendez-social"><i class="fas fa-share-alt"></i> Redes</a></li>
+            <li><a href="#menendez-social"><i class="fas fa-share-alt"></i> Redes Sociales</a></li>
             <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
         `;
     } else if (casa === 'valles') {
         menuList.innerHTML = `
             <li><a href="index.html"><i class="fas fa-arrow-left"></i> Inicio</a></li>
-            <li><a href="content.html#valles"><i class="fas fa-home"></i> Casa</a></li>
+            <li><a href="content.html#valles"><i class="fas fa-home"></i> Casa Valles</a></li>
             <li><a href="#valles-equipamiento"><i class="fas fa-cogs"></i> Equipamiento</a></li>
             <li><a href="#valles-actividades"><i class="fas fa-hiking"></i> Actividades</a></li>
             <li><a href="#valles-localizacion"><i class="fas fa-map-marker-alt"></i> Localización</a></li>
             <li><a href="#valles-tarifas"><i class="fas fa-euro-sign"></i> Tarifas</a></li>
-            <li><a href="#valles-social"><i class="fas fa-share-alt"></i> Redes</a></li>
+            <li><a href="#valles-social"><i class="fas fa-share-alt"></i> Redes Sociales</a></li>
             <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
         `;
+    }
+}
+
+function updateHeaderTitle(casa) {
+    const headerTitle = document.querySelector('.logo-container h1');
+    if (!headerTitle) {
+        console.error('Header title element not found');
+        return;
+    }
+
+    if (casa === 'menendez') {
+        headerTitle.textContent = 'Casas de aldea Menéndez';
+    } else if (casa === 'valles') {
+        headerTitle.textContent = 'Casas de aldea Valles';
     }
 }
 
@@ -96,7 +113,7 @@ function plusSlides(n, containerId) {
 
 function loadImages(containerId, folderName, totalImages) {
     var container = document.getElementById(containerId);
-    for (var i = 0; i <= totalImages; i++) {
+    for (var i = 1; i <= totalImages; i++) {
         var slideDiv = document.createElement('div');
         slideDiv.className = 'carousel-slide';
         var img = document.createElement('img');
@@ -116,8 +133,8 @@ function loadImages(containerId, folderName, totalImages) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadImages('carousel-container-menedez', 'menendez', 42); 
-    loadImages('carousel-container-valles', 'valles', 51); 
+    loadImages('carousel-container-menedez', 'menendez', 29); // Carga 29 imágenes para Casa Menéndez
+    loadImages('carousel-container-valles', 'valles', 57); // Carga 57 imágenes para Casa Valles
 });
 
 document.getElementById('mobile-menu').addEventListener('click', function () {
