@@ -17,7 +17,7 @@ body {
 header {
     background-color: #00695c;
     color: white;
-    padding: 20px 0;
+    padding: 10px 0;  /* Reducido el padding para ajustar mejor en todas las versiones */
     position: fixed;
     width: 100%;
     top: 0;
@@ -31,25 +31,24 @@ header .container {
 }
 
 .logo-container {
-    text-align: left; /* Alinea el título a la izquierda */
-    flex: 1; /* Permite que el logo ocupe el espacio disponible a la izquierda */
+    text-align: left;
+    flex: 1;
 }
 
-h1, h2 {
+h1 {
     font-size: 24px;
-    margin-top: 0; /* Asegura que no haya margen superior */
-    padding-top: 80px; /* Añade un relleno superior para evitar que el header oculte los títulos */
+    margin: 0; /* Elimina cualquier margen para asegurar alineación */
 }
 
 .logo {
-    max-height: 80px;
-    margin-bottom: 20px;
+    max-height: 50px; /* Ajusta el tamaño del logo para mejor alineación */
+    margin-bottom: 0; /* Elimina margen inferior del logo */
 }
 
 header nav {
-    flex: 1; /* Permite que el menú ocupe el espacio disponible a la derecha */
+    flex: 1;
     display: flex;
-    justify-content: flex-end; /* Alinea el menú a la derecha */
+    justify-content: flex-end;
 }
 
 header nav ul {
@@ -85,8 +84,8 @@ header nav ul li a {
 
 /* Casa Section */
 .casa-section {
-    margin-top: 160px;
-    scroll-margin-top: 80px; /* Desplaza la sección para que el header no la tape */
+    margin-top: 100px;
+    scroll-margin-top: 80px;
 }
 
 .casa-section h2 {
@@ -272,7 +271,7 @@ header nav ul li a {
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: #004d40; /* Cambia el fondo cuando se despliega el menú en móvil */
+        background-color: #004d40;
         padding: 10px 0;
     }
 
@@ -287,10 +286,15 @@ header nav ul li a {
     }
 
     header.nav-active {
-        background-color: rgba(0, 0, 0, 0.8); /* Añade un fondo semitransparente cuando el menú está activo */
+        background-color: rgba(0, 0, 0, 0.8);
     }
 
     header.nav-active nav ul li a {
-        color: white; /* Asegura que el texto del menú siga siendo blanco */
+        color: white;
+    }
+
+    /* Ajuste para eliminar el margen superior en móvil */
+    h1 {
+        padding-top: 10px;
     }
 }
