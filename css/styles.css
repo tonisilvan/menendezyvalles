@@ -31,14 +31,13 @@ header .container {
 }
 
 .logo-container {
-    text-align: center;
-    width: 100%;
-    /* Eliminado el margin-top: 100px */
+    text-align: left; /* Alinea el título a la izquierda */
+    flex: 1; /* Permite que el logo ocupe el espacio disponible a la izquierda */
 }
 
 h1 {
     font-size: 24px;
-    margin-top: 10px;
+    margin: 0; /* Quita el margen superior para centrar verticalmente */
 }
 
 .logo {
@@ -47,14 +46,14 @@ h1 {
 }
 
 header nav {
-    flex-grow: 1; /* Para que el menú ocupe todo el espacio disponible y no se apriete a la derecha */
+    flex: 1; /* Permite que el menú ocupe el espacio disponible a la derecha */
+    display: flex;
+    justify-content: flex-end; /* Alinea el menú a la derecha */
 }
 
 header nav ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Alinea el menú de navegación al centro */
-    align-items: center;
     margin: 0;
     padding: 0;
 }
@@ -213,7 +212,7 @@ header nav ul li a {
 }
 
 .contact-form input,
-contact-form textarea {
+.contact-form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
