@@ -17,7 +17,7 @@ body {
 header {
     background-color: #00695c;
     color: white;
-    padding: 20px 0;
+    padding: 10px 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -83,10 +83,27 @@ header nav ul li a {
     margin: 4px 0;
 }
 
+header.nav-active {
+    background-color: #004d40; /* Cambia el color de fondo cuando el menú está activo */
+}
+
+header.nav-active nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #004d40; /* Cambia el fondo del menú desplegado */
+    padding: 20px;
+}
+
+header.nav-active nav ul li {
+    margin: 10px 0;
+    text-align: left;
+}
+
 /* Casa Section */
 .casa-section {
-    margin-top: 160px;
-    scroll-margin-top: 80px;
+    margin-top: 100px; /* Ajusta el margen superior para que el título no quede tapado */
+    scroll-margin-top: 100px;
 }
 
 .casa-section h2 {
@@ -268,19 +285,24 @@ header nav ul li a {
         align-items: flex-start;
     }
 
-    header nav ul {
-        display: none;
+    header.nav-active nav ul {
+        display: flex;
         flex-direction: column;
         width: 100%;
     }
 
-    header.nav-active nav ul {
-        display: flex;
+    header.nav-active nav ul li {
+        margin-left: 0;
+        text-align: left;
+        padding: 10px 0;
     }
 
-    header nav ul li {
-        margin-left: 0;
-        text-align: center;
-        padding: 10px 0;
+    header.nav-active {
+        background-color: #004d40; /* Cambia el color de fondo cuando el menú está activo */
+    }
+
+    header.nav-active nav ul li {
+        margin: 10px 0;
+        text-align: left;
     }
 }
