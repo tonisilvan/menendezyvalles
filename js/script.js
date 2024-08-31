@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Captura los clics en los enlaces de navegación
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // Cancela el comportamiento por defecto
 
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
@@ -163,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                 const offsetPosition = elementPosition - headerOffset;
 
+                // Realiza el desplazamiento suave
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
@@ -174,12 +175,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Para desplazarse correctamente al cargar la página con un hash
+    // Para manejar la carga de la página con un hash en la URL
     const initialHash = window.location.hash.substring(1);
     if (initialHash) {
         const targetElement = document.getElementById(initialHash);
         if (targetElement) {
-            const headerOffset = 100; // Ajusta este valor según la altura de tu encabezado
+            const headerOffset = 500; // Ajusta este valor según la altura de tu encabezado
             const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
             const offsetPosition = elementPosition - headerOffset;
 
