@@ -17,7 +17,7 @@ body {
 header {
     background-color: #00695c;
     color: white;
-    padding: 10px 0;
+    padding: 5px 0; /* Reducido el padding superior e inferior */
     position: fixed;
     width: 100%;
     top: 0;
@@ -26,34 +26,34 @@ header {
 
 header .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start; /* Alinea el contenido al inicio */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    padding: 0 20px; /* Añade padding lateral para separar el menú del borde */
 }
 
 .logo-container {
     text-align: left;
-    flex: 1;
+    flex: 2; /* Aumenta el espacio para el logo */
+    margin-top: 10px; /* Añade margen superior al logo */
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 28px; /* Disminuye el tamaño del h1 */
     margin: 0;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 20px; /* Disminuye el tamaño del h2 */
     margin: 0;
-}
-
-.logo {
-    max-height: 50px;
-    margin-bottom: 0;
+    margin-top: 5px; /* Añade margen superior */
 }
 
 header nav {
-    flex: 1;
+    flex: 3; /* Reduce el espacio del menú para dar más espacio al logo */
     display: flex;
     justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: 5px; /* Añade margen superior al menú */
 }
 
 header nav ul {
@@ -64,7 +64,7 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-left: 20px;
+    margin-left: 15px; /* Reduce el espacio entre elementos del menú */
 }
 
 header nav ul li a {
@@ -89,7 +89,7 @@ header nav ul li a {
 
 /* Casa Section */
 .casa-section {
-    margin-top: 160px;
+    margin-top: 150px; /* Ajuste del margen superior para más espacio */
     scroll-margin-top: 80px;
 }
 
