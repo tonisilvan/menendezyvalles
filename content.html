@@ -7,7 +7,7 @@
     <title>Casas de aldea Menéndez y Valles - Turismo rural</title>
     <meta name="description" content="Casas rurales para alquilar en Oballo y Villacibrán, en Cangas del Narcea. Disfruta de un ambiente rural con todas las comodidades.">
     <meta name="keywords" content="casa rural, Oballo, Villacibrán, Cangas del Narcea, alquiler rural, naturaleza, Asturias">
-    <link rel="icon" href="favicon.png">
+    <link rel="icon" href="favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
@@ -28,14 +28,13 @@
             <nav>
                 <ul>
                     <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li><a href="#menendez" onclick="showCasa('menendez')"><i class="fas fa-home"></i> Casa Menéndez</a></li>
-                    <li><a href="#valles" onclick="showCasa('valles')"><i class="fas fa-home"></i> Casa Valles</a></li>
-                    <li><a href="#equipamiento"><i class="fas fa-cogs"></i> Equipamiento</a></li>
-                    <li><a href="#actividades"><i class="fas fa-running"></i> Actividades</a></li>
+                    <li id="menu-menendez" style="display: none;"><a href="#menendez" onclick="showCasa('menendez')"><i class="fas fa-home"></i> Casa Menéndez</a></li>
+                    <li id="menu-valles" style="display: none;"><a href="#valles" onclick="showCasa('valles')"><i class="fas fa-home"></i> Casa Valles</a></li>
+                    <li><a href="#equipamiento"><i class="fas fa-cog"></i> Equipamiento</a></li>
+                    <li><a href="#actividades"><i class="fas fa-bicycle"></i> Actividades</a></li>
                     <li><a href="#localizacion"><i class="fas fa-map-marker-alt"></i> Localización</a></li>
                     <li><a href="#tarifas"><i class="fas fa-euro-sign"></i> Tarifas</a></li>
-                    <li><a href="#social-menendez"><i class="fas fa-share-alt"></i> Redes Sociales Menéndez</a></li>
-                    <li><a href="#social-valles"><i class="fas fa-share-alt"></i> Redes Sociales Valles</a></li>
+                    <li><a href="#social"><i class="fas fa-share-alt"></i> Redes Sociales</a></li>
                     <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
                 </ul>
             </nav>
@@ -63,7 +62,7 @@
                 
                 <p>Construida en piedra y madera, cuenta con un amplio equipamiento, un jardín con parrilla, una terraza y un aparcamiento privado para varios automóviles. Un lugar ideal para pasar tus fines de semana o tus vacaciones en un ambiente rural, lleno de tranquilidad y sosiego en medio de la naturaleza. La casa se alquila completa y tiene una capacidad máxima de 10 plazas (4 habitaciones dobles y 2 camas supletorias opcionales).</p>
                 
-                <div class="features" id="equipamiento">
+                <div class="features" id="equipamiento-menendez">
                     <h3>Equipamiento</h3>
                     <ul>
                         <li><i class="fas fa-fire"></i> Amplio salón-cocina con chimenea y TV.</li>
@@ -76,9 +75,8 @@
                     </ul>
                 </div>
 
-                <div class="activities" id="actividades">
+                <div class="activities" id="actividades-menendez">
                     <h3>Actividades</h3>
-                    <p>Las actividades en contacto con la naturaleza tienen un entorno ideal en el Parque Natural de las Fuentes del Narcea e Ibias (Declarado Reserva de la Biosfera por la Unesco) que integra La Reserva Biológica de Muniellos, con especial protección. 500 km2 de impresionante naturaleza con montañas, valles, ríos y bosques que configuran este espacio natural que se ha conservado en estado casi virgen, animales protegidos como nutrias, urogallos y osos... y un silencio que sólo rompe el canto de los pájaros, donde podrás disfrutar de impresionantes rutas de senderismo o en bicicleta de montaña. En la zona encontrarás además numerosas actividades y visitas culturales, Cangas del Narcea es uno de los municipios más relevantes del Principado en cuanto a riqueza artística, con un gran número de pequeños núcleos rurales diseminados a lo largo de su territorio en los que se conservan elementos artísticos importantes (iglesias, ermitas, tallas románicas y góticas...), destacando el Monasterio de San Juan Bautista de Corias, la Basílica de Sta. María Magdalena, el Santuario del Acebo e innumerables palacios, muestras de arquitectura popular, y desde donde se pueden contemplar hermosos paisajes. Solicita tu permiso para visitar la Reserva Biológica de Muniellos.</p>
                     <ul>
                         <li><i class="fas fa-hiking"></i> Rutas de senderismo</li>
                         <li><i class="fas fa-bicycle"></i> Bicicleta de montaña</li>
@@ -87,13 +85,13 @@
                     </ul>
                 </div>
 
-                <div class="location" id="localizacion">
+                <div class="location" id="localizacion-menendez">
                     <h3>Localización</h3>
                     <p>Oballo, Cangas del Narcea - Principado de Asturias - España</p>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2928.1229129235964!2d-6.751527024368169!3d43.05784231620326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd303b3f39dcd737%3A0x3e4cf4392b2697a1!2sOballo%2C%2033800%20Cangas%20del%20Narcea%2C%20Asturias!5e0!3m2!1ses!2ses!4v1693117171398!5m2!1ses!2ses" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
 
-                <div class="tarifas" id="tarifas">
+                <div class="tarifas" id="tarifas-menendez">
                     <h3>Tarifas</h3>
                     <p>Alquiler casa íntegra (10 personas) - 250,00<i class="fas fa-euro-sign"></i> día</p>
                     <p>Consultar tarifas especiales en temporada baja o largas estancias.</p>
@@ -145,7 +143,6 @@
 
                 <div class="activities" id="actividades-valles">
                     <h3>Actividades</h3>
-                    <p>Las actividades en contacto con la naturaleza tienen un entorno ideal en el Parque Natural de las Fuentes del Narcea e Ibias (Declarado Reserva de la Biosfera por la Unesco) que integra La Reserva Biológica de Muniellos, con especial protección. La estación de esquí de Leitariegos a 15 Km permite la práctica de deportes de invierno como esquí, snowboard,... Grandes bosques, animales protegidos como urogallos y osos... y un silencio que sólo rompe el canto de los pájaros, donde podrás disfrutar de impresionantes rutas de senderismo o en bicicleta de montaña. En la zona encontrarás además numerosas actividades y visitas culturales, Cangas del Narcea es uno de los municipios más relevantes del Principado en cuanto a riqueza artística, con un gran número de pequeños núcleos rurales diseminados a lo largo de su territorio en los que se conservan elementos artísticos importantes (iglesias, ermitas, tallas románicas y góticas...), destacando el Monasterio de San Juan Bautista de Corias, la Basílica de Sta. María Magdalena, el Santuario del Acebo e innumerables palacios, muestras de arquitectura popular, y desde donde se pueden contemplar hermosos paisajes.</p>
                     <ul>
                         <li><i class="fas fa-hiking"></i> Rutas de senderismo</li>
                         <li><i class="fas fa-bicycle"></i> Bicicleta de montaña</li>
@@ -216,6 +213,19 @@
                 section.style.display = 'none';
             });
             document.getElementById(casa).style.display = 'block';
+
+            // Mostrar/ocultar menús específicos
+            if (casa === 'menendez') {
+                document.getElementById('menu-menendez').style.display = 'none';
+                document.getElementById('menu-valles').style.display = 'block';
+                document.getElementById('social-menendez').style.display = 'block';
+                document.getElementById('social-valles').style.display = 'none';
+            } else if (casa === 'valles') {
+                document.getElementById('menu-menendez').style.display = 'block';
+                document.getElementById('menu-valles').style.display = 'none';
+                document.getElementById('social-menendez').style.display = 'none';
+                document.getElementById('social-valles').style.display = 'block';
+            }
         }
     
         function handleHashChange() {
@@ -290,22 +300,6 @@
                 document.querySelector('header').classList.remove('nav-active');
             });
         });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // Desplázate siempre al principio de la página al cargarla
-            window.scrollTo(0, 0);
-
-            const hash = window.location.hash.substring(1);
-            if (hash) {
-                // Asegúrate de que la función de hash se ejecuta después de una pequeña demora
-                setTimeout(() => {
-                    handleHashChange();
-                }, 100);
-            } else {
-                showCasa('menendez'); // Mostrar por defecto Casa Menéndez
-            }
-        });
-
     </script>
     
 </body>
