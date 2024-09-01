@@ -333,6 +333,10 @@ header nav ul li a {
         flex-direction: column;
         align-items: flex-start;
     }
+    header nav {
+        position: fixed;
+        padding-top: 27%;
+    }
 
     header nav ul {
         display: none;
@@ -378,4 +382,66 @@ header nav ul li a {
         flex-direction: column;
         align-items: flex-start;
     }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.logo-container h1 {
+    animation: fadeInLeft 1.5s ease-in-out forwards;
+    opacity: 0; /* Inicia la animación con el texto invisible */
+}
+
+@media (max-width: 768px) {
+    .logo-container h1 {
+        font-size: 24px;
+        animation: fadeInLeft 1s ease-in-out forwards; /* Ajuste para dispositivos móviles */
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.logo-container h2 {
+    animation: fadeInRight 1.5s ease-in-out forwards;
+    opacity: 0; /* Inicia la animación con el texto invisible */
+    animation-delay: 0.5s; /* Retardo para que aparezca después de 'Casas de aldea Menéndez' */
+}
+
+@media (max-width: 768px) {
+    .logo-container h2 {
+        font-size: 16px;
+        animation: fadeInRight 1s ease-in-out forwards;
+    }
+}
+
+/* Estilos para el video de fondo dentro del header */
+#header-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el video para cubrir todo el header */
+    z-index: -1; /* Coloca el video detrás del contenido del header */
+}
+
+header {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
