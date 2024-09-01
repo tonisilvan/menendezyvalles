@@ -446,3 +446,11 @@ header nav ul li a {
 header {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
+
+#contacto .container h2 {
+    color: #00695c;
+}
+
+#contacto .container p i{
+    color: #00695c;
+}

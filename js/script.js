@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const targetElement = document.getElementById(targetId);
 
                 if (targetElement) {
-                    const headerOffset = 150; // Ajusta este valor según la altura de tu encabezado
+                    const headerOffset = 140; // Ajusta este valor según la altura de tu encabezado
                     const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                     const offsetPosition = elementPosition - headerOffset;
 
