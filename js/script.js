@@ -1,69 +1,89 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuList = document.getElementById('menu-items');
     const mobileMenu = document.getElementById('mobile-menu');
-    const headerTitle = document.querySelector('.logo-container h1');
     const headerElement = document.querySelector('header');
 
-    if (!menuList || !headerTitle) {
-        console.error('Menu items container or header title not found');
+    if (!menuList) {
+        console.error('Menu items container not found');
         return;
     }
 
     const hash = window.location.hash.substring(1);
-    if (hash) {
-        handleHashChange();
+    if (hash.startsWith('menendez')) {
+        showCasa('menendez');
+    } else if (hash.startsWith('valles')) {
+        showCasa('valles');
     } else {
         showCasa('menendez'); // Mostrar por defecto Casa Menéndez
     }
 
-    updateMenuIcons(hash); // Actualizar iconos del menú según la sección
+    // Evento para abrir/cerrar el menú móvil
+    mobileMenu.addEventListener('click', function() {
+        this.classList.toggle('open');
+        headerElement.classList.toggle('nav-active');
+    });
 
     // Captura los clics en los enlaces de navegación
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('header nav ul li a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault(); // Cancela el comportamiento por defecto
 
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
+            const href = this.getAttribute('href');
+            if (href.startsWith("#")) {
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
 
-            if (targetElement) {
-                const headerOffset = 140; // Ajusta este valor según la altura de tu encabezado
-                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - headerOffset;
+                if (targetElement) {
+                    const headerOffset = 150; // Ajusta este valor según la altura de tu encabezado
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - headerOffset;
 
-                // Realiza el desplazamiento suave
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+                    // Realiza el desplazamiento suave
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
 
-                // Actualiza la URL sin recargar la página
-                history.pushState(null, null, `#${targetId}`);
-
-                // Colapsa el menú en la versión móvil
-                if (window.innerWidth <= 768) {
-                    mobileMenu.classList.remove('open');
-                    headerElement.classList.remove('nav-active');
+                    // Actualiza la URL sin recargar la página
+                    history.pushState(null, null, `#${targetId}`);
                 }
+            } else {
+                // Redirige para el enlace "Inicio"
+                window.location.href = href;
+            }
+
+            // Colapsa el menú en la versión móvil después de cualquier clic
+            if (window.innerWidth <= 768) {
+                mobileMenu.classList.remove('open');
+                headerElement.classList.remove('nav-active');
             }
         });
     });
 
-    // Para manejar la carga de la página con un hash en la URL
-    const initialHash = window.location.hash.substring(1);
-    if (initialHash) {
-        const targetElement = document.getElementById(initialHash);
-        if (targetElement) {
-            const headerOffset = 100; // Ajusta este valor según la altura de tu encabezado
-            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - headerOffset;
+    // Ajusta la posición inicial si se carga con un hash
+    if (hash) {
+        setTimeout(() => {
+            const targetElement = document.getElementById(hash);
+            if (targetElement) {
+                const headerOffset = 150; // Ajusta este valor según la altura de tu encabezado
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset;
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }, 0); // Se ejecuta después de que el navegador haya manejado la posición inicial
     }
+
+    // Cargar las imágenes de los carruseles
+    loadImages('carousel-container-menedez', 'menendez', 42);
+    loadImages('carousel-container-valles', 'valles', 51);
+
+    // Mostrar la primera imagen del carrusel por defecto
+    showSlides(0, 'carousel-container-menedez');
+    showSlides(0, 'carousel-container-valles');
 });
 
 window.addEventListener('hashchange', handleHashChange);
@@ -84,12 +104,25 @@ function showCasa(casa) {
         updateMenuIcons(casa);
         updateHeaderTitle(casa);
     }
+
+    // Cerrar el menú móvil si se ha seleccionado una casa
+    const mobileMenu = document.getElementById('mobile-menu');
+    const headerElement = document.querySelector('header');
+    if (window.innerWidth <= 768) {
+        mobileMenu.classList.remove('open');
+        headerElement.classList.remove('nav-active');
+    }
 }
 
 function handleHashChange() {
     const hash = window.location.hash.substring(1);
-    if (hash === 'menendez' || hash === 'valles') {
-        showCasa(hash);
+    if (hash.startsWith('menendez')) {
+        showCasa('menendez');
+    } else if (hash.startsWith('valles')) {
+        showCasa('valles');
+    } else {
+        // Mostrar por defecto la sección 'menendez' si el hash no es válido
+        showCasa('menendez');
     }
 }
 
@@ -104,7 +137,7 @@ function updateMenuIcons(casa) {
     if (casa === 'menendez') {
         menuList.innerHTML = `
             <li><a href="index.html"><i class="fas fa-arrow-left"></i> Inicio</a></li>
-            <li><a href="content.html#menendez"><i class="fas fa-home"></i> Casa</a></li>
+            <li><a href="#menendez"><i class="fas fa-home"></i> Casa</a></li>
             <li><a href="#menendez-equipamiento"><i class="fas fa-cogs"></i> Equipamiento</a></li>
             <li><a href="#menendez-actividades"><i class="fas fa-hiking"></i> Actividades</a></li>
             <li><a href="#menendez-localizacion"><i class="fas fa-map-marker-alt"></i> Localización</a></li>
@@ -115,7 +148,7 @@ function updateMenuIcons(casa) {
     } else if (casa === 'valles') {
         menuList.innerHTML = `
             <li><a href="index.html"><i class="fas fa-arrow-left"></i> Inicio</a></li>
-            <li><a href="content.html#valles"><i class="fas fa-home"></i> Casa</a></li>
+            <li><a href="#valles"><i class="fas fa-home"></i> Casa</a></li>
             <li><a href="#valles-equipamiento"><i class="fas fa-cogs"></i> Equipamiento</a></li>
             <li><a href="#valles-actividades"><i class="fas fa-hiking"></i> Actividades</a></li>
             <li><a href="#valles-localizacion"><i class="fas fa-map-marker-alt"></i> Localización</a></li>
@@ -180,22 +213,3 @@ function loadImages(containerId, folderName, totalImages) {
     }
     showSlides(slideIndex, containerId); // Mostrar la primera imagen
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-    loadImages('carousel-container-menedez', 'menendez', 42);
-    loadImages('carousel-container-valles', 'valles', 51);
-});
-
-document.getElementById('mobile-menu').addEventListener('click', function () {
-    this.classList.toggle('open');
-    document.querySelector('header').classList.toggle('nav-active');
-});
-
-document.querySelectorAll('header nav ul li a').forEach(function (link) {
-    link.addEventListener('click', function () {
-        if (window.innerWidth <= 768) {
-            document.getElementById('mobile-menu').classList.remove('open');
-            document.querySelector('header').classList.remove('nav-active');
-        }
-    });
-});
