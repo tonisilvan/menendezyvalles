@@ -217,10 +217,20 @@ function loadImages(containerId, folderName, totalImages) {
 document.addEventListener('DOMContentLoaded', function() {
     const videoElement = document.querySelector('.video-container video');
 
-    // Intenta reproducir el video manualmente cuando se carga la página
+    // Verificar si el video está en pantalla y luego intentar reproducirlo
     if (videoElement) {
+        videoElement.muted = true;
         videoElement.play().catch(error => {
-            console.log('Error attempting to play video:', error);
+            console.log('El video no pudo reproducirse automáticamente:', error);
+        });
+
+        // Asegura que se intente reproducir el video de nuevo si se hace scroll
+        window.addEventListener('scroll', function() {
+            if (videoElement.paused) {
+                videoElement.play().catch(error => {
+                    console.log('El video no pudo reproducirse al hacer scroll:', error);
+                });
+            }
         });
     }
-})
+});

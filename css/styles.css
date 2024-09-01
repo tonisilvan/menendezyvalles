@@ -456,13 +456,14 @@ header {
 }
 
 .video-container {
-    position: absolute;
+    position: fixed; /* Cambia de absolute a fixed para que el video se mantenga en su lugar */
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     overflow: hidden;
     z-index: -1;
+    pointer-events: none; /* Asegura que no se pueda interactuar con el video */
 }
 
 .video-container video {
@@ -475,5 +476,3 @@ header {
     height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    z-index: -1;
-}
