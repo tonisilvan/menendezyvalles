@@ -328,6 +328,7 @@ header nav ul li a {
     .mobile-menu {
         display: flex;
     }
+    
 
     header .container {
         flex-direction: column;
