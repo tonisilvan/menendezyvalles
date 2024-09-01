@@ -182,8 +182,8 @@ function loadImages(containerId, folderName, totalImages) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadImages('carousel-container-menedez', 'menendez', 42); // Carga 42 imágenes para Casa Menéndez
-    loadImages('carousel-container-valles', 'valles', 51); // Carga 51 imágenes para Casa Valles
+    loadImages('carousel-container-menedez', 'menendez', 42);
+    loadImages('carousel-container-valles', 'valles', 51);
 });
 
 document.getElementById('mobile-menu').addEventListener('click', function () {
