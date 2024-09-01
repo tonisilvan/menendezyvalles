@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const targetElement = document.getElementById(targetId);
 
                 if (targetElement) {
-                    const headerOffset = 146; // Ajusta este valor según la altura de tu encabezado
+                    const headerOffset = 147; // Ajusta este valor según la altura de tu encabezado
                     const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                     const offsetPosition = elementPosition - headerOffset;
 
@@ -213,3 +213,14 @@ function loadImages(containerId, folderName, totalImages) {
     }
     showSlides(slideIndex, containerId); // Mostrar la primera imagen
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const videoElement = document.querySelector('.video-container video');
+
+    // Intenta reproducir el video manualmente cuando se carga la página
+    if (videoElement) {
+        videoElement.play().catch(error => {
+            console.log('Error attempting to play video:', error);
+        });
+    }
+})
