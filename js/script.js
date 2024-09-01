@@ -134,9 +134,9 @@ function updateHeaderTitle(casa) {
     }
 
     if (casa === 'menendez') {
-        headerTitle.textContent = 'Casas de aldea Menéndez';
+        headerTitle.textContent = 'Casa de aldea Menéndez';
     } else if (casa === 'valles') {
-        headerTitle.textContent = 'Casas de aldea Valles';
+        headerTitle.textContent = 'Casa de aldea Valles';
     }
 }
 
