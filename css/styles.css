@@ -17,7 +17,7 @@ body {
 header {
     background-color: #00695c;
     color: white;
-    padding: 5px 0; /* Reducido el padding superior e inferior */
+    padding: 9px 0; /* Reducido el padding superior e inferior */
     position: fixed;
     width: 100%;
     top: 0;
@@ -329,6 +329,9 @@ header nav ul li a {
         display: flex;
     }
     
+    header {
+        padding: 2px 0; /* Reducido el padding superior e inferior */
+    }
 
     header .container {
         flex-direction: column;
